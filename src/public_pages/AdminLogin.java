@@ -6,6 +6,7 @@
 package public_pages;
 
 import admin_pages.ManageBranchesView;
+import admin_pages.ManageEmployeesView;
 
 /**
  *
@@ -148,7 +149,7 @@ public class AdminLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdminLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminLogInActionPerformed
-        ManageBranchesView manageEmployeesView = new ManageBranchesView();
+        ManageEmployeesView manageEmployeesView = new ManageEmployeesView();
         manageEmployeesView.setLocationRelativeTo(null);
         manageEmployeesView.setVisible(true);
         this.dispose();
