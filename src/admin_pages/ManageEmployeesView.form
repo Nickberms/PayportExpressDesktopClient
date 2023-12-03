@@ -30,11 +30,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="panEmployeesAdminDetails" min="-2" max="-2" attributes="0"/>
+                      <Component id="panAdminDetails" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="220" max="32767" attributes="0"/>
                       <Component id="panManageEmployees" max="32767" attributes="0"/>
                       <EmptySpace pref="220" max="32767" attributes="0"/>
-                      <Component id="btnEmployeesAdminLogout" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnLogout" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
@@ -46,11 +46,11 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnEmployeesAdminLogout" min="-2" pref="38" max="-2" attributes="0"/>
+                  <Component id="btnLogout" min="-2" pref="38" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="panManageEmployees" min="-2" max="-2" attributes="0"/>
-                          <Component id="panEmployeesAdminDetails" min="-2" max="-2" attributes="0"/>
+                          <Component id="panAdminDetails" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="470" max="-2" attributes="0"/>
@@ -152,7 +152,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="panEmployeesAdminDetails">
+    <Container class="javax.swing.JPanel" name="panAdminDetails">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="e3" green="e3" id="Control Highlight" palette="2" red="e3" type="palette"/>
@@ -167,8 +167,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblEmployeesWelcomeAdmin" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblEmployeesAdminId" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblWelcome" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblAdminId" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -182,9 +182,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="lblEmployeesWelcomeAdmin" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblWelcome" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="lblEmployeesAdminId" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAdminId" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnGoToBranchesTable" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -193,7 +193,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblEmployeesWelcomeAdmin">
+        <Component class="javax.swing.JLabel" name="lblWelcome">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="1"/>
@@ -201,7 +201,7 @@
             <Property name="text" type="java.lang.String" value="Welcome"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblEmployeesAdminId">
+        <Component class="javax.swing.JLabel" name="lblAdminId">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="1"/>
@@ -222,7 +222,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="btnEmployeesAdminLogout">
+    <Component class="javax.swing.JButton" name="btnLogout">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="14" style="1"/>
@@ -230,7 +230,7 @@
         <Property name="text" type="java.lang.String" value="Logout"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEmployeesAdminLogoutActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLogoutActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="panManageEmployees">
@@ -260,7 +260,7 @@
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnDeleteEmployee" pref="137" max="32767" attributes="0"/>
-                      <Component id="btnSearchEmployees" max="32767" attributes="0"/>
+                      <Component id="btnSearch" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
@@ -279,7 +279,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblSearchEmployees" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtSearchEmployees" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnSearchEmployees" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSearch" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -319,7 +319,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtSearchEmployees">
         </Component>
-        <Component class="javax.swing.JButton" name="btnSearchEmployees">
+        <Component class="javax.swing.JButton" name="btnSearch">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="1"/>
@@ -327,7 +327,7 @@
             <Property name="text" type="java.lang.String" value="Search"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchEmployeesActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnAddEmployee">

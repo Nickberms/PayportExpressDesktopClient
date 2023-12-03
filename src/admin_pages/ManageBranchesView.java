@@ -32,17 +32,17 @@ public class ManageBranchesView extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblBranchesView = new javax.swing.JTable();
-        panBranchesAdminDetails = new javax.swing.JPanel();
-        lblBranchesWelcomeAdmin = new javax.swing.JLabel();
-        lblBranchesAdminId = new javax.swing.JLabel();
+        panAdminDetails = new javax.swing.JPanel();
+        lblWelcome = new javax.swing.JLabel();
+        lblAdminId = new javax.swing.JLabel();
         btnGoToEmployeesTable = new javax.swing.JButton();
-        btnBranchesAdminLogout = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         panManageBranches = new javax.swing.JPanel();
         btnUpdateBranch = new javax.swing.JButton();
         btnDeleteBranch = new javax.swing.JButton();
         lblSearchBranches = new javax.swing.JLabel();
         txtSearchBranches = new javax.swing.JTextField();
-        btnSearchBranches = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
         btnAddBranch = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -108,13 +108,13 @@ public class ManageBranchesView extends javax.swing.JFrame {
             tblBranchesView.getColumnModel().getColumn(3).setPreferredWidth(100);
         }
 
-        panBranchesAdminDetails.setBackground(java.awt.SystemColor.controlHighlight);
+        panAdminDetails.setBackground(java.awt.SystemColor.controlHighlight);
 
-        lblBranchesWelcomeAdmin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblBranchesWelcomeAdmin.setText("Welcome");
+        lblWelcome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblWelcome.setText("Welcome");
 
-        lblBranchesAdminId.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblBranchesAdminId.setText("Admin ID:");
+        lblAdminId.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblAdminId.setText("Admin ID:");
 
         btnGoToEmployeesTable.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnGoToEmployeesTable.setText("Go to Employees Table");
@@ -124,38 +124,38 @@ public class ManageBranchesView extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout panBranchesAdminDetailsLayout = new javax.swing.GroupLayout(panBranchesAdminDetails);
-        panBranchesAdminDetails.setLayout(panBranchesAdminDetailsLayout);
-        panBranchesAdminDetailsLayout.setHorizontalGroup(
-            panBranchesAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panBranchesAdminDetailsLayout.createSequentialGroup()
+        javax.swing.GroupLayout panAdminDetailsLayout = new javax.swing.GroupLayout(panAdminDetails);
+        panAdminDetails.setLayout(panAdminDetailsLayout);
+        panAdminDetailsLayout.setHorizontalGroup(
+            panAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panAdminDetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panBranchesAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panBranchesAdminDetailsLayout.createSequentialGroup()
-                        .addGroup(panBranchesAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblBranchesWelcomeAdmin)
-                            .addComponent(lblBranchesAdminId))
+                .addGroup(panAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panAdminDetailsLayout.createSequentialGroup()
+                        .addGroup(panAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblWelcome)
+                            .addComponent(lblAdminId))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(btnGoToEmployeesTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        panBranchesAdminDetailsLayout.setVerticalGroup(
-            panBranchesAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panBranchesAdminDetailsLayout.createSequentialGroup()
+        panAdminDetailsLayout.setVerticalGroup(
+            panAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panAdminDetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblBranchesWelcomeAdmin)
+                .addComponent(lblWelcome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblBranchesAdminId)
+                .addComponent(lblAdminId)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnGoToEmployeesTable)
                 .addContainerGap())
         );
 
-        btnBranchesAdminLogout.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnBranchesAdminLogout.setText("Logout");
-        btnBranchesAdminLogout.addActionListener(new java.awt.event.ActionListener() {
+        btnLogout.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBranchesAdminLogoutActionPerformed(evt);
+                btnLogoutActionPerformed(evt);
             }
         });
 
@@ -180,11 +180,11 @@ public class ManageBranchesView extends javax.swing.JFrame {
         lblSearchBranches.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblSearchBranches.setText("Search Branches:");
 
-        btnSearchBranches.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnSearchBranches.setText("Search");
-        btnSearchBranches.addActionListener(new java.awt.event.ActionListener() {
+        btnSearch.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchBranchesActionPerformed(evt);
+                btnSearchActionPerformed(evt);
             }
         });
 
@@ -214,7 +214,7 @@ public class ManageBranchesView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(panManageBranchesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnDeleteBranch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSearchBranches, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         panManageBranchesLayout.setVerticalGroup(
@@ -229,7 +229,7 @@ public class ManageBranchesView extends javax.swing.JFrame {
                 .addGroup(panManageBranchesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSearchBranches)
                     .addComponent(txtSearchBranches, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearchBranches))
+                    .addComponent(btnSearch))
                 .addContainerGap())
         );
 
@@ -242,11 +242,11 @@ public class ManageBranchesView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(panBranchesAdminDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(panAdminDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                         .addComponent(panManageBranches, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                        .addComponent(btnBranchesAdminLogout)))
+                        .addComponent(btnLogout)))
                 .addGap(16, 16, 16))
         );
         layout.setVerticalGroup(
@@ -254,11 +254,11 @@ public class ManageBranchesView extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBranchesAdminLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(panManageBranches, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(panBranchesAdminDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(panAdminDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(16, 16, 16)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(16, 16, 16))
@@ -268,26 +268,32 @@ public class ManageBranchesView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpdateBranchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateBranchActionPerformed
-        // TODO add your handling code here:
+        UpdateBranchForm updateBranchForm = new UpdateBranchForm();
+        updateBranchForm.setLocationRelativeTo(null);
+        updateBranchForm.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnUpdateBranchActionPerformed
 
     private void btnDeleteBranchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteBranchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeleteBranchActionPerformed
 
-    private void btnSearchBranchesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchBranchesActionPerformed
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSearchBranchesActionPerformed
+    }//GEN-LAST:event_btnSearchActionPerformed
 
-    private void btnBranchesAdminLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBranchesAdminLogoutActionPerformed
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         AdminLogin adminLogin = new AdminLogin();
         adminLogin.setLocationRelativeTo(null);
         adminLogin.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnBranchesAdminLogoutActionPerformed
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnAddBranchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBranchActionPerformed
-        // TODO add your handling code here:
+        AddBranchForm addBranchForm = new AddBranchForm();
+        addBranchForm.setLocationRelativeTo(null);
+        addBranchForm.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnAddBranchActionPerformed
 
     private void btnGoToEmployeesTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoToEmployeesTableActionPerformed
@@ -337,16 +343,16 @@ public class ManageBranchesView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddBranch;
-    private javax.swing.JButton btnBranchesAdminLogout;
     private javax.swing.JButton btnDeleteBranch;
     private javax.swing.JButton btnGoToEmployeesTable;
-    private javax.swing.JButton btnSearchBranches;
+    private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdateBranch;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblBranchesAdminId;
-    private javax.swing.JLabel lblBranchesWelcomeAdmin;
+    private javax.swing.JLabel lblAdminId;
     private javax.swing.JLabel lblSearchBranches;
-    private javax.swing.JPanel panBranchesAdminDetails;
+    private javax.swing.JLabel lblWelcome;
+    private javax.swing.JPanel panAdminDetails;
     private javax.swing.JPanel panManageBranches;
     private javax.swing.JTable tblBranchesView;
     private javax.swing.JTextField txtSearchBranches;

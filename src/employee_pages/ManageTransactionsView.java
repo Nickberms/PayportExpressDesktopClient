@@ -32,10 +32,10 @@ public class ManageTransactionsView extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTransactionsView = new javax.swing.JTable();
         panEmployeeDetails = new javax.swing.JPanel();
-        lblWelcomeEmployee = new javax.swing.JLabel();
+        lblWelcome = new javax.swing.JLabel();
         lblEmployeeId = new javax.swing.JLabel();
         lblBranchStationed = new javax.swing.JLabel();
-        btnEmployeeLogout = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         panManageTransactions = new javax.swing.JPanel();
         btnPayServiceFee = new javax.swing.JButton();
         btnSendAmount = new javax.swing.JButton();
@@ -43,7 +43,7 @@ public class ManageTransactionsView extends javax.swing.JFrame {
         btnDeleteTransaction = new javax.swing.JButton();
         lblSearchTransactions = new javax.swing.JLabel();
         txtSearchTransactions = new javax.swing.JTextField();
-        btnSearchTransactions = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Manage Transactions");
@@ -130,8 +130,8 @@ public class ManageTransactionsView extends javax.swing.JFrame {
 
         panEmployeeDetails.setBackground(java.awt.SystemColor.controlHighlight);
 
-        lblWelcomeEmployee.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblWelcomeEmployee.setText("Welcome");
+        lblWelcome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblWelcome.setText("Welcome");
 
         lblEmployeeId.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblEmployeeId.setText("Employee ID:");
@@ -146,7 +146,7 @@ public class ManageTransactionsView extends javax.swing.JFrame {
             .addGroup(panEmployeeDetailsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panEmployeeDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblWelcomeEmployee)
+                    .addComponent(lblWelcome)
                     .addComponent(lblEmployeeId)
                     .addComponent(lblBranchStationed))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -155,7 +155,7 @@ public class ManageTransactionsView extends javax.swing.JFrame {
             panEmployeeDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panEmployeeDetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblWelcomeEmployee)
+                .addComponent(lblWelcome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblEmployeeId)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -163,11 +163,11 @@ public class ManageTransactionsView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        btnEmployeeLogout.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnEmployeeLogout.setText("Logout");
-        btnEmployeeLogout.addActionListener(new java.awt.event.ActionListener() {
+        btnLogout.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEmployeeLogoutActionPerformed(evt);
+                btnLogoutActionPerformed(evt);
             }
         });
 
@@ -208,11 +208,11 @@ public class ManageTransactionsView extends javax.swing.JFrame {
         lblSearchTransactions.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblSearchTransactions.setText("Search Transactions:");
 
-        btnSearchTransactions.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnSearchTransactions.setText("Search");
-        btnSearchTransactions.addActionListener(new java.awt.event.ActionListener() {
+        btnSearch.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchTransactionsActionPerformed(evt);
+                btnSearchActionPerformed(evt);
             }
         });
 
@@ -236,7 +236,7 @@ public class ManageTransactionsView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(panManageTransactionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnDeleteTransaction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSearchTransactions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         panManageTransactionsLayout.setVerticalGroup(
@@ -252,7 +252,7 @@ public class ManageTransactionsView extends javax.swing.JFrame {
                 .addGroup(panManageTransactionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSearchTransactions)
                     .addComponent(txtSearchTransactions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearchTransactions))
+                    .addComponent(btnSearch))
                 .addContainerGap())
         );
 
@@ -269,7 +269,7 @@ public class ManageTransactionsView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
                         .addComponent(panManageTransactions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
-                        .addComponent(btnEmployeeLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(16, 16, 16))
         );
         layout.setVerticalGroup(
@@ -280,7 +280,7 @@ public class ManageTransactionsView extends javax.swing.JFrame {
                     .addComponent(panEmployeeDetails, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(panManageTransactions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnEmployeeLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(16, 16, 16)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
@@ -305,16 +305,16 @@ public class ManageTransactionsView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeleteTransactionActionPerformed
 
-    private void btnSearchTransactionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchTransactionsActionPerformed
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSearchTransactionsActionPerformed
+    }//GEN-LAST:event_btnSearchActionPerformed
 
-    private void btnEmployeeLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeLogoutActionPerformed
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         EmployeeLogin employeeLogin = new EmployeeLogin();
         employeeLogin.setLocationRelativeTo(null);
         employeeLogin.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnEmployeeLogoutActionPerformed
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -360,16 +360,16 @@ public class ManageTransactionsView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDeleteTransaction;
-    private javax.swing.JButton btnEmployeeLogout;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnPayServiceFee;
-    private javax.swing.JButton btnSearchTransactions;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnSendAmount;
     private javax.swing.JButton btnWithdrawAmount;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBranchStationed;
     private javax.swing.JLabel lblEmployeeId;
     private javax.swing.JLabel lblSearchTransactions;
-    private javax.swing.JLabel lblWelcomeEmployee;
+    private javax.swing.JLabel lblWelcome;
     private javax.swing.JPanel panEmployeeDetails;
     private javax.swing.JPanel panManageTransactions;
     private javax.swing.JTable tblTransactionsView;

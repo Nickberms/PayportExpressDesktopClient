@@ -70,19 +70,19 @@
                   <EmptySpace min="26" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" alignment="0" groupAlignment="2" attributes="0">
-                          <Component id="btnAdminGoToAddTransactionForm" linkSize="2" alignment="2" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnAdminLogIn" linkSize="2" alignment="2" min="-2" pref="226" max="-2" attributes="0"/>
+                          <Component id="btnGoToAddTransactionForm" linkSize="2" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnLogIn" linkSize="2" alignment="2" min="-2" pref="226" max="-2" attributes="0"/>
                           <Component id="btnLogInAsEmployee" linkSize="2" alignment="2" min="-2" pref="146" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblAdminLoginEmailAddress" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblAdminLoginPassword" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblEmailAddress" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblPassword" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtAdminLoginPassword" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtAdminLoginEmailAddress" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtPassword" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtEmailAddress" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -95,18 +95,18 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblAdminLoginEmailAddress" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtAdminLoginEmailAddress" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblEmailAddress" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtEmailAddress" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblAdminLoginPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtAdminLoginPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPassword" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  <Component id="btnAdminLogIn" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnLogIn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="btnAdminGoToAddTransactionForm" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnGoToAddTransactionForm" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnLogInAsEmployee" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -115,7 +115,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnAdminLogIn">
+        <Component class="javax.swing.JButton" name="btnLogIn">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="11" style="1"/>
@@ -124,10 +124,10 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdminLogInActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLogInActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnAdminGoToAddTransactionForm">
+        <Component class="javax.swing.JButton" name="btnGoToAddTransactionForm">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="11" style="1"/>
@@ -136,22 +136,22 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdminGoToAddTransactionFormActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGoToAddTransactionFormActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblAdminLoginEmailAddress">
+        <Component class="javax.swing.JLabel" name="lblEmailAddress">
           <Properties>
             <Property name="text" type="java.lang.String" value="Email Address:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblAdminLoginPassword">
+        <Component class="javax.swing.JLabel" name="lblPassword">
           <Properties>
             <Property name="text" type="java.lang.String" value="Password:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtAdminLoginEmailAddress">
+        <Component class="javax.swing.JTextField" name="txtEmailAddress">
         </Component>
-        <Component class="javax.swing.JTextField" name="txtAdminLoginPassword">
+        <Component class="javax.swing.JTextField" name="txtPassword">
         </Component>
         <Component class="javax.swing.JButton" name="btnLogInAsEmployee">
           <Properties>

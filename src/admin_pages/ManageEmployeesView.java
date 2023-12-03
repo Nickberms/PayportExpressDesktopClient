@@ -32,17 +32,17 @@ public class ManageEmployeesView extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEmployeesView = new javax.swing.JTable();
-        panEmployeesAdminDetails = new javax.swing.JPanel();
-        lblEmployeesWelcomeAdmin = new javax.swing.JLabel();
-        lblEmployeesAdminId = new javax.swing.JLabel();
+        panAdminDetails = new javax.swing.JPanel();
+        lblWelcome = new javax.swing.JLabel();
+        lblAdminId = new javax.swing.JLabel();
         btnGoToBranchesTable = new javax.swing.JButton();
-        btnEmployeesAdminLogout = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         panManageEmployees = new javax.swing.JPanel();
         btnUpdateEmployee = new javax.swing.JButton();
         btnDeleteEmployee = new javax.swing.JButton();
         lblSearchEmployees = new javax.swing.JLabel();
         txtSearchEmployees = new javax.swing.JTextField();
-        btnSearchEmployees = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
         btnAddEmployee = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -120,13 +120,13 @@ public class ManageEmployeesView extends javax.swing.JFrame {
             tblEmployeesView.getColumnModel().getColumn(9).setPreferredWidth(100);
         }
 
-        panEmployeesAdminDetails.setBackground(java.awt.SystemColor.controlHighlight);
+        panAdminDetails.setBackground(java.awt.SystemColor.controlHighlight);
 
-        lblEmployeesWelcomeAdmin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblEmployeesWelcomeAdmin.setText("Welcome");
+        lblWelcome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblWelcome.setText("Welcome");
 
-        lblEmployeesAdminId.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblEmployeesAdminId.setText("Admin ID:");
+        lblAdminId.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblAdminId.setText("Admin ID:");
 
         btnGoToBranchesTable.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnGoToBranchesTable.setText("Go to Branches Table");
@@ -136,38 +136,38 @@ public class ManageEmployeesView extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout panEmployeesAdminDetailsLayout = new javax.swing.GroupLayout(panEmployeesAdminDetails);
-        panEmployeesAdminDetails.setLayout(panEmployeesAdminDetailsLayout);
-        panEmployeesAdminDetailsLayout.setHorizontalGroup(
-            panEmployeesAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panEmployeesAdminDetailsLayout.createSequentialGroup()
+        javax.swing.GroupLayout panAdminDetailsLayout = new javax.swing.GroupLayout(panAdminDetails);
+        panAdminDetails.setLayout(panAdminDetailsLayout);
+        panAdminDetailsLayout.setHorizontalGroup(
+            panAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panAdminDetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panEmployeesAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panEmployeesAdminDetailsLayout.createSequentialGroup()
-                        .addGroup(panEmployeesAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblEmployeesWelcomeAdmin)
-                            .addComponent(lblEmployeesAdminId))
+                .addGroup(panAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panAdminDetailsLayout.createSequentialGroup()
+                        .addGroup(panAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblWelcome)
+                            .addComponent(lblAdminId))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(btnGoToBranchesTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        panEmployeesAdminDetailsLayout.setVerticalGroup(
-            panEmployeesAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panEmployeesAdminDetailsLayout.createSequentialGroup()
+        panAdminDetailsLayout.setVerticalGroup(
+            panAdminDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panAdminDetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblEmployeesWelcomeAdmin)
+                .addComponent(lblWelcome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblEmployeesAdminId)
+                .addComponent(lblAdminId)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnGoToBranchesTable)
                 .addContainerGap())
         );
 
-        btnEmployeesAdminLogout.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnEmployeesAdminLogout.setText("Logout");
-        btnEmployeesAdminLogout.addActionListener(new java.awt.event.ActionListener() {
+        btnLogout.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEmployeesAdminLogoutActionPerformed(evt);
+                btnLogoutActionPerformed(evt);
             }
         });
 
@@ -192,11 +192,11 @@ public class ManageEmployeesView extends javax.swing.JFrame {
         lblSearchEmployees.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblSearchEmployees.setText("Search Employees:");
 
-        btnSearchEmployees.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnSearchEmployees.setText("Search");
-        btnSearchEmployees.addActionListener(new java.awt.event.ActionListener() {
+        btnSearch.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchEmployeesActionPerformed(evt);
+                btnSearchActionPerformed(evt);
             }
         });
 
@@ -226,7 +226,7 @@ public class ManageEmployeesView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(panManageEmployeesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnDeleteEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                    .addComponent(btnSearchEmployees, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         panManageEmployeesLayout.setVerticalGroup(
@@ -241,7 +241,7 @@ public class ManageEmployeesView extends javax.swing.JFrame {
                 .addGroup(panManageEmployeesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSearchEmployees)
                     .addComponent(txtSearchEmployees, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearchEmployees))
+                    .addComponent(btnSearch))
                 .addContainerGap())
         );
 
@@ -254,11 +254,11 @@ public class ManageEmployeesView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(panEmployeesAdminDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(panAdminDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
                         .addComponent(panManageEmployees, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
-                        .addComponent(btnEmployeesAdminLogout)))
+                        .addComponent(btnLogout)))
                 .addGap(16, 16, 16))
         );
         layout.setVerticalGroup(
@@ -266,11 +266,11 @@ public class ManageEmployeesView extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEmployeesAdminLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(panManageEmployees, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(panEmployeesAdminDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(panAdminDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(16, 16, 16)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(16, 16, 16))
@@ -280,26 +280,32 @@ public class ManageEmployeesView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpdateEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateEmployeeActionPerformed
-        // TODO add your handling code here:
+        UpdateEmployeeForm updateEmployeeForm = new UpdateEmployeeForm();
+        updateEmployeeForm.setLocationRelativeTo(null);
+        updateEmployeeForm.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnUpdateEmployeeActionPerformed
 
     private void btnDeleteEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteEmployeeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeleteEmployeeActionPerformed
 
-    private void btnSearchEmployeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchEmployeesActionPerformed
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSearchEmployeesActionPerformed
+    }//GEN-LAST:event_btnSearchActionPerformed
 
-    private void btnEmployeesAdminLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeesAdminLogoutActionPerformed
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         AdminLogin adminLogin = new AdminLogin();
         adminLogin.setLocationRelativeTo(null);
         adminLogin.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnEmployeesAdminLogoutActionPerformed
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnAddEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddEmployeeActionPerformed
-        // TODO add your handling code here:
+        AddEmployeeForm addEmployeeForm = new AddEmployeeForm();
+        addEmployeeForm.setLocationRelativeTo(null);
+        addEmployeeForm.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnAddEmployeeActionPerformed
 
     private void btnGoToBranchesTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoToBranchesTableActionPerformed
@@ -348,15 +354,15 @@ public class ManageEmployeesView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddEmployee;
     private javax.swing.JButton btnDeleteEmployee;
-    private javax.swing.JButton btnEmployeesAdminLogout;
     private javax.swing.JButton btnGoToBranchesTable;
-    private javax.swing.JButton btnSearchEmployees;
+    private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdateEmployee;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblEmployeesAdminId;
-    private javax.swing.JLabel lblEmployeesWelcomeAdmin;
+    private javax.swing.JLabel lblAdminId;
     private javax.swing.JLabel lblSearchEmployees;
-    private javax.swing.JPanel panEmployeesAdminDetails;
+    private javax.swing.JLabel lblWelcome;
+    private javax.swing.JPanel panAdminDetails;
     private javax.swing.JPanel panManageEmployees;
     private javax.swing.JTable tblEmployeesView;
     private javax.swing.JTextField txtSearchEmployees;

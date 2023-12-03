@@ -13,7 +13,7 @@ public class AddTransactionForm extends javax.swing.JFrame {
         lblAmountMoney2 = new javax.swing.JLabel();
         txtAmountMoney2 = new javax.swing.JTextField();
         lblPayportExpressTransactionForm = new javax.swing.JLabel();
-        panSenderDetails = new java.awt.Panel();
+        panLeftComponents = new java.awt.Panel();
         txtSenderFirstName = new javax.swing.JTextField();
         txtSenderMiddleName = new javax.swing.JTextField();
         lblSenderFirstName = new javax.swing.JLabel();
@@ -30,7 +30,7 @@ public class AddTransactionForm extends javax.swing.JFrame {
         txtAmount = new javax.swing.JTextField();
         lblServiceFee = new javax.swing.JLabel();
         txtServiceFee = new javax.swing.JTextField();
-        panReceiverDetails = new java.awt.Panel();
+        panRightComponents = new java.awt.Panel();
         txtReceiverFirstName = new javax.swing.JTextField();
         txtReceiverMiddleName = new javax.swing.JTextField();
         lblReceiverFirstName = new javax.swing.JLabel();
@@ -42,8 +42,8 @@ public class AddTransactionForm extends javax.swing.JFrame {
         lblReceiverNameSuffix = new javax.swing.JLabel();
         lblReceiverContactNumber = new javax.swing.JLabel();
         txtReceiverContactNumber = new javax.swing.JTextField();
-        btnSubmitTransaction = new javax.swing.JButton();
-        btnCancelTransactionSubmission = new javax.swing.JButton();
+        btnSubmit = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
 
         lblAmountMoney2.setText("Service Fee:");
 
@@ -54,7 +54,19 @@ public class AddTransactionForm extends javax.swing.JFrame {
         lblPayportExpressTransactionForm.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblPayportExpressTransactionForm.setText("Payport Express Transaction Form");
 
-        panSenderDetails.setBackground(java.awt.SystemColor.controlHighlight);
+        panLeftComponents.setBackground(java.awt.SystemColor.controlHighlight);
+
+        txtSenderFirstName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenderFirstNameActionPerformed(evt);
+            }
+        });
+
+        txtSenderMiddleName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenderMiddleNameActionPerformed(evt);
+            }
+        });
 
         lblSenderFirstName.setText("First Name:");
 
@@ -65,97 +77,141 @@ public class AddTransactionForm extends javax.swing.JFrame {
 
         lblSenderLastName.setText("Last Name:");
 
+        txtSenderLastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenderLastNameActionPerformed(evt);
+            }
+        });
+
+        cbxSenderNameSuffix.setMaximumRowCount(11);
         cbxSenderNameSuffix.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Sr.", "Jr.", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" }));
+        cbxSenderNameSuffix.setLightWeightPopupEnabled(false);
+        cbxSenderNameSuffix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxSenderNameSuffixActionPerformed(evt);
+            }
+        });
 
         lblSenderNameSuffix.setText("Name Suffix:");
 
         lblSenderContactNumber.setText("Contact Number:");
+
+        txtSenderContactNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenderContactNumberActionPerformed(evt);
+            }
+        });
 
         lblAmountMoney.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblAmountMoney.setText("Amount Money");
 
         lblAmount.setText("Amount:");
 
+        txtAmount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAmountActionPerformed(evt);
+            }
+        });
+
         lblServiceFee.setText("Service Fee:");
 
-        javax.swing.GroupLayout panSenderDetailsLayout = new javax.swing.GroupLayout(panSenderDetails);
-        panSenderDetails.setLayout(panSenderDetailsLayout);
-        panSenderDetailsLayout.setHorizontalGroup(
-            panSenderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panSenderDetailsLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(panSenderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panSenderDetailsLayout.createSequentialGroup()
+        txtServiceFee.setEditable(false);
+        txtServiceFee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtServiceFeeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panLeftComponentsLayout = new javax.swing.GroupLayout(panLeftComponents);
+        panLeftComponents.setLayout(panLeftComponentsLayout);
+        panLeftComponentsLayout.setHorizontalGroup(
+            panLeftComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panLeftComponentsLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(panLeftComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panLeftComponentsLayout.createSequentialGroup()
                         .addComponent(lblSenderDetails)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panSenderDetailsLayout.createSequentialGroup()
-                        .addGroup(panSenderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panSenderDetailsLayout.createSequentialGroup()
-                                .addGroup(panSenderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panLeftComponentsLayout.createSequentialGroup()
+                        .addGroup(panLeftComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panLeftComponentsLayout.createSequentialGroup()
+                                .addGroup(panLeftComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblSenderLastName)
                                     .addComponent(lblSenderContactNumber)
                                     .addComponent(lblSenderNameSuffix)
                                     .addComponent(lblSenderFirstName)
                                     .addComponent(lblSenderMiddleName))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(panSenderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                .addGroup(panLeftComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                                     .addComponent(txtSenderContactNumber)
                                     .addComponent(cbxSenderNameSuffix, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtSenderLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtSenderMiddleName, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtSenderFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(panSenderDetailsLayout.createSequentialGroup()
+                                    .addComponent(txtSenderFirstName)))
+                            .addGroup(panLeftComponentsLayout.createSequentialGroup()
                                 .addComponent(lblAmountMoney)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(panSenderDetailsLayout.createSequentialGroup()
-                                .addGroup(panSenderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panLeftComponentsLayout.createSequentialGroup()
+                                .addGroup(panLeftComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblAmount)
                                     .addComponent(lblServiceFee))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(panSenderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                .addGroup(panLeftComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                                     .addComponent(txtAmount)
                                     .addComponent(txtServiceFee))))
-                        .addGap(26, 26, 26))))
+                        .addGap(18, 18, 18))))
         );
-        panSenderDetailsLayout.setVerticalGroup(
-            panSenderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panSenderDetailsLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+        panLeftComponentsLayout.setVerticalGroup(
+            panLeftComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panLeftComponentsLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
                 .addComponent(lblSenderDetails)
                 .addGap(18, 18, 18)
-                .addGroup(panSenderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panLeftComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSenderFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSenderFirstName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panSenderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panLeftComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSenderMiddleName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSenderMiddleName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panSenderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panLeftComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSenderLastName)
                     .addComponent(txtSenderLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panSenderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panLeftComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbxSenderNameSuffix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSenderNameSuffix))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panSenderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panLeftComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSenderContactNumber)
                     .addComponent(txtSenderContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addComponent(lblAmountMoney)
                 .addGap(18, 18, 18)
-                .addGroup(panSenderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panLeftComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAmount)
                     .addComponent(txtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panSenderDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panLeftComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblServiceFee)
                     .addComponent(txtServiceFee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26))
+                .addGap(18, 18, 18))
         );
 
-        panReceiverDetails.setBackground(java.awt.SystemColor.controlHighlight);
+        panRightComponents.setBackground(java.awt.SystemColor.controlHighlight);
+
+        txtReceiverFirstName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtReceiverFirstNameActionPerformed(evt);
+            }
+        });
+
+        txtReceiverMiddleName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtReceiverMiddleNameActionPerformed(evt);
+            }
+        });
 
         lblReceiverFirstName.setText("First Name:");
 
@@ -166,93 +222,112 @@ public class AddTransactionForm extends javax.swing.JFrame {
 
         lblReceiverLastName.setText("Last Name:");
 
+        txtReceiverLastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtReceiverLastNameActionPerformed(evt);
+            }
+        });
+
+        cbxReceiverNameSuffix.setMaximumRowCount(11);
         cbxReceiverNameSuffix.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Sr.", "Jr.", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" }));
+        cbxReceiverNameSuffix.setLightWeightPopupEnabled(false);
+        cbxReceiverNameSuffix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxReceiverNameSuffixActionPerformed(evt);
+            }
+        });
 
         lblReceiverNameSuffix.setText("Name Suffix:");
 
         lblReceiverContactNumber.setText("Contact Number:");
 
-        btnSubmitTransaction.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnSubmitTransaction.setText("Submit");
-        btnSubmitTransaction.addActionListener(new java.awt.event.ActionListener() {
+        txtReceiverContactNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmitTransactionActionPerformed(evt);
+                txtReceiverContactNumberActionPerformed(evt);
             }
         });
 
-        btnCancelTransactionSubmission.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnCancelTransactionSubmission.setText("Cancel");
-        btnCancelTransactionSubmission.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelTransactionSubmissionActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout panReceiverDetailsLayout = new javax.swing.GroupLayout(panReceiverDetails);
-        panReceiverDetails.setLayout(panReceiverDetailsLayout);
-        panReceiverDetailsLayout.setHorizontalGroup(
-            panReceiverDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panReceiverDetailsLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(panReceiverDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCancelTransactionSubmission, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(panReceiverDetailsLayout.createSequentialGroup()
-                        .addGroup(panReceiverDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnSubmitTransaction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(panReceiverDetailsLayout.createSequentialGroup()
+        btnCancel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnCancel.setText("Cancel");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panRightComponentsLayout = new javax.swing.GroupLayout(panRightComponents);
+        panRightComponents.setLayout(panRightComponentsLayout);
+        panRightComponentsLayout.setHorizontalGroup(
+            panRightComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panRightComponentsLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(panRightComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(panRightComponentsLayout.createSequentialGroup()
+                        .addGroup(panRightComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnSubmit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(panRightComponentsLayout.createSequentialGroup()
                                 .addComponent(lblReceiverLastName)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtReceiverLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panReceiverDetailsLayout.createSequentialGroup()
-                                .addGroup(panReceiverDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panRightComponentsLayout.createSequentialGroup()
+                                .addGroup(panRightComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblReceiverContactNumber)
                                     .addComponent(lblReceiverNameSuffix))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(panReceiverDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(panRightComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtReceiverContactNumber)
                                     .addComponent(cbxReceiverNameSuffix, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(panReceiverDetailsLayout.createSequentialGroup()
+                            .addGroup(panRightComponentsLayout.createSequentialGroup()
                                 .addComponent(lblReceiverFirstName)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtReceiverFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panReceiverDetailsLayout.createSequentialGroup()
+                            .addGroup(panRightComponentsLayout.createSequentialGroup()
                                 .addComponent(lblReceiverMiddleName)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtReceiverMiddleName, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lblReceiverDetails))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(26, 26, 26))
+                .addGap(18, 18, 18))
         );
-        panReceiverDetailsLayout.setVerticalGroup(
-            panReceiverDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panReceiverDetailsLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+        panRightComponentsLayout.setVerticalGroup(
+            panRightComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panRightComponentsLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
                 .addComponent(lblReceiverDetails)
                 .addGap(18, 18, 18)
-                .addGroup(panReceiverDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panRightComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtReceiverFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblReceiverFirstName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panReceiverDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panRightComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtReceiverMiddleName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblReceiverMiddleName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panReceiverDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panRightComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblReceiverLastName)
                     .addComponent(txtReceiverLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panReceiverDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panRightComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbxReceiverNameSuffix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblReceiverNameSuffix))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panReceiverDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panRightComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblReceiverContactNumber)
                     .addComponent(txtReceiverContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addComponent(btnSubmitTransaction)
+                .addGap(18, 18, 18)
+                .addComponent(btnSubmit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCancelTransactionSubmission)
-                .addGap(41, 41, 41))
+                .addComponent(btnCancel)
+                .addGap(32, 32, 32))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -264,9 +339,9 @@ public class AddTransactionForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblPayportExpressTransactionForm)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(panSenderDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(panLeftComponents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(panReceiverDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(panRightComponents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(26, 26, 26))
         );
         layout.setVerticalGroup(
@@ -276,24 +351,72 @@ public class AddTransactionForm extends javax.swing.JFrame {
                 .addComponent(lblPayportExpressTransactionForm)
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panSenderDetails, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panReceiverDetails, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(panLeftComponents, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panRightComponents, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCancelTransactionSubmissionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelTransactionSubmissionActionPerformed
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         Index index = new Index();
         index.setLocationRelativeTo(null);
         index.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnCancelTransactionSubmissionActionPerformed
+    }//GEN-LAST:event_btnCancelActionPerformed
 
-    private void btnSubmitTransactionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitTransactionActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSubmitTransactionActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void txtSenderFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenderFirstNameActionPerformed
+  
+    }//GEN-LAST:event_txtSenderFirstNameActionPerformed
+
+    private void txtSenderMiddleNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenderMiddleNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenderMiddleNameActionPerformed
+
+    private void txtSenderLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenderLastNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenderLastNameActionPerformed
+
+    private void cbxSenderNameSuffixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSenderNameSuffixActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxSenderNameSuffixActionPerformed
+
+    private void txtSenderContactNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenderContactNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenderContactNumberActionPerformed
+
+    private void txtAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAmountActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAmountActionPerformed
+
+    private void txtServiceFeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtServiceFeeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtServiceFeeActionPerformed
+
+    private void txtReceiverFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReceiverFirstNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtReceiverFirstNameActionPerformed
+
+    private void txtReceiverMiddleNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReceiverMiddleNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtReceiverMiddleNameActionPerformed
+
+    private void txtReceiverLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReceiverLastNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtReceiverLastNameActionPerformed
+
+    private void cbxReceiverNameSuffixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxReceiverNameSuffixActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxReceiverNameSuffixActionPerformed
+
+    private void txtReceiverContactNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReceiverContactNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtReceiverContactNumberActionPerformed
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -310,8 +433,8 @@ public class AddTransactionForm extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelTransactionSubmission;
-    private javax.swing.JButton btnSubmitTransaction;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox<String> cbxReceiverNameSuffix;
     private javax.swing.JComboBox<String> cbxSenderNameSuffix;
     private javax.swing.JLabel lblAmount;
@@ -331,8 +454,8 @@ public class AddTransactionForm extends javax.swing.JFrame {
     private javax.swing.JLabel lblSenderMiddleName;
     private javax.swing.JLabel lblSenderNameSuffix;
     private javax.swing.JLabel lblServiceFee;
-    private java.awt.Panel panReceiverDetails;
-    private java.awt.Panel panSenderDetails;
+    private java.awt.Panel panLeftComponents;
+    private java.awt.Panel panRightComponents;
     private javax.swing.JTextField txtAmount;
     private javax.swing.JTextField txtAmountMoney2;
     private javax.swing.JTextField txtReceiverContactNumber;

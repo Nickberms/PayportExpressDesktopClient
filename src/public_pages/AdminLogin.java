@@ -32,12 +32,12 @@ public class AdminLogin extends javax.swing.JFrame {
 
         lblAdminLogin = new javax.swing.JLabel();
         panAdminLoginForm = new javax.swing.JPanel();
-        btnAdminLogIn = new javax.swing.JButton();
-        btnAdminGoToAddTransactionForm = new javax.swing.JButton();
-        lblAdminLoginEmailAddress = new javax.swing.JLabel();
-        lblAdminLoginPassword = new javax.swing.JLabel();
-        txtAdminLoginEmailAddress = new javax.swing.JTextField();
-        txtAdminLoginPassword = new javax.swing.JTextField();
+        btnLogIn = new javax.swing.JButton();
+        btnGoToAddTransactionForm = new javax.swing.JButton();
+        lblEmailAddress = new javax.swing.JLabel();
+        lblPassword = new javax.swing.JLabel();
+        txtEmailAddress = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JTextField();
         btnLogInAsEmployee = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,27 +49,27 @@ public class AdminLogin extends javax.swing.JFrame {
 
         panAdminLoginForm.setBackground(java.awt.SystemColor.controlHighlight);
 
-        btnAdminLogIn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnAdminLogIn.setText("Log In");
-        btnAdminLogIn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAdminLogIn.addActionListener(new java.awt.event.ActionListener() {
+        btnLogIn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnLogIn.setText("Log In");
+        btnLogIn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnLogIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdminLogInActionPerformed(evt);
+                btnLogInActionPerformed(evt);
             }
         });
 
-        btnAdminGoToAddTransactionForm.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnAdminGoToAddTransactionForm.setText("Go to Add Transaction Form");
-        btnAdminGoToAddTransactionForm.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAdminGoToAddTransactionForm.addActionListener(new java.awt.event.ActionListener() {
+        btnGoToAddTransactionForm.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnGoToAddTransactionForm.setText("Go to Add Transaction Form");
+        btnGoToAddTransactionForm.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnGoToAddTransactionForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdminGoToAddTransactionFormActionPerformed(evt);
+                btnGoToAddTransactionFormActionPerformed(evt);
             }
         });
 
-        lblAdminLoginEmailAddress.setText("Email Address:");
+        lblEmailAddress.setText("Email Address:");
 
-        lblAdminLoginPassword.setText("Password:");
+        lblPassword.setText("Password:");
 
         btnLogInAsEmployee.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnLogInAsEmployee.setText("Log in as Employee");
@@ -88,37 +88,37 @@ public class AdminLogin extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(panAdminLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panAdminLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                        .addComponent(btnAdminGoToAddTransactionForm)
-                        .addComponent(btnAdminLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnGoToAddTransactionForm)
+                        .addComponent(btnLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnLogInAsEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panAdminLoginFormLayout.createSequentialGroup()
                         .addGroup(panAdminLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblAdminLoginEmailAddress)
-                            .addComponent(lblAdminLoginPassword))
+                            .addComponent(lblEmailAddress)
+                            .addComponent(lblPassword))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panAdminLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAdminLoginPassword)
-                            .addComponent(txtAdminLoginEmailAddress))))
+                            .addComponent(txtPassword)
+                            .addComponent(txtEmailAddress))))
                 .addGap(26, 26, 26))
         );
 
-        panAdminLoginFormLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAdminGoToAddTransactionForm, btnAdminLogIn, btnLogInAsEmployee});
+        panAdminLoginFormLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnGoToAddTransactionForm, btnLogIn, btnLogInAsEmployee});
 
         panAdminLoginFormLayout.setVerticalGroup(
             panAdminLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panAdminLoginFormLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(panAdminLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAdminLoginEmailAddress)
-                    .addComponent(txtAdminLoginEmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblEmailAddress)
+                    .addComponent(txtEmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panAdminLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAdminLoginPassword)
-                    .addComponent(txtAdminLoginPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblPassword)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addComponent(btnAdminLogIn)
+                .addComponent(btnLogIn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAdminGoToAddTransactionForm)
+                .addComponent(btnGoToAddTransactionForm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnLogInAsEmployee)
                 .addGap(26, 26, 26))
@@ -148,19 +148,19 @@ public class AdminLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAdminLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminLogInActionPerformed
+    private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
         ManageEmployeesView manageEmployeesView = new ManageEmployeesView();
         manageEmployeesView.setLocationRelativeTo(null);
         manageEmployeesView.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnAdminLogInActionPerformed
+    }//GEN-LAST:event_btnLogInActionPerformed
 
-    private void btnAdminGoToAddTransactionFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminGoToAddTransactionFormActionPerformed
+    private void btnGoToAddTransactionFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoToAddTransactionFormActionPerformed
         AddTransactionForm addTransactionForm = new AddTransactionForm();
         addTransactionForm.setLocationRelativeTo(null);
         addTransactionForm.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnAdminGoToAddTransactionFormActionPerformed
+    }//GEN-LAST:event_btnGoToAddTransactionFormActionPerformed
 
     private void btnLogInAsEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInAsEmployeeActionPerformed
         EmployeeLogin employeeLogin = new EmployeeLogin();
@@ -206,14 +206,14 @@ public class AdminLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdminGoToAddTransactionForm;
-    private javax.swing.JButton btnAdminLogIn;
+    private javax.swing.JButton btnGoToAddTransactionForm;
+    private javax.swing.JButton btnLogIn;
     private javax.swing.JButton btnLogInAsEmployee;
     private javax.swing.JLabel lblAdminLogin;
-    private javax.swing.JLabel lblAdminLoginEmailAddress;
-    private javax.swing.JLabel lblAdminLoginPassword;
+    private javax.swing.JLabel lblEmailAddress;
+    private javax.swing.JLabel lblPassword;
     private javax.swing.JPanel panAdminLoginForm;
-    private javax.swing.JTextField txtAdminLoginEmailAddress;
-    private javax.swing.JTextField txtAdminLoginPassword;
+    private javax.swing.JTextField txtEmailAddress;
+    private javax.swing.JTextField txtPassword;
     // End of variables declaration//GEN-END:variables
 }

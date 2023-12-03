@@ -28,7 +28,7 @@ public class Index extends javax.swing.JFrame {
     private void initComponents() {
 
         panIndexButtons = new javax.swing.JPanel();
-        btnIndexGoToAddTransactionForm = new javax.swing.JButton();
+        btnGoToAddTransactionForm = new javax.swing.JButton();
         btnGoToEmployeeLogin = new javax.swing.JButton();
         lblPayportExpress = new javax.swing.JLabel();
 
@@ -38,12 +38,12 @@ public class Index extends javax.swing.JFrame {
 
         panIndexButtons.setBackground(java.awt.SystemColor.controlHighlight);
 
-        btnIndexGoToAddTransactionForm.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnIndexGoToAddTransactionForm.setText("Go to Add Transaction Form");
-        btnIndexGoToAddTransactionForm.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnIndexGoToAddTransactionForm.addActionListener(new java.awt.event.ActionListener() {
+        btnGoToAddTransactionForm.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnGoToAddTransactionForm.setText("Go to Add Transaction Form");
+        btnGoToAddTransactionForm.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnGoToAddTransactionForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIndexGoToAddTransactionFormActionPerformed(evt);
+                btnGoToAddTransactionFormActionPerformed(evt);
             }
         });
 
@@ -63,7 +63,7 @@ public class Index extends javax.swing.JFrame {
             .addGroup(panIndexButtonsLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(panIndexButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(btnIndexGoToAddTransactionForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGoToAddTransactionForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnGoToEmployeeLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(26, 26, 26))
         );
@@ -71,7 +71,7 @@ public class Index extends javax.swing.JFrame {
             panIndexButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panIndexButtonsLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(btnIndexGoToAddTransactionForm)
+                .addComponent(btnGoToAddTransactionForm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnGoToEmployeeLogin)
                 .addGap(26, 26, 26))
@@ -104,12 +104,12 @@ public class Index extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnIndexGoToAddTransactionFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIndexGoToAddTransactionFormActionPerformed
+    private void btnGoToAddTransactionFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoToAddTransactionFormActionPerformed
         AddTransactionForm addTransactionForm = new AddTransactionForm();
         addTransactionForm.setLocationRelativeTo(null);
         addTransactionForm.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnIndexGoToAddTransactionFormActionPerformed
+    }//GEN-LAST:event_btnGoToAddTransactionFormActionPerformed
 
     private void btnGoToEmployeeLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoToEmployeeLoginActionPerformed
         EmployeeLogin employeeLogin = new EmployeeLogin();
@@ -154,8 +154,8 @@ public class Index extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGoToAddTransactionForm;
     private javax.swing.JButton btnGoToEmployeeLogin;
-    private javax.swing.JButton btnIndexGoToAddTransactionForm;
     private javax.swing.JLabel lblPayportExpress;
     private javax.swing.JPanel panIndexButtons;
     // End of variables declaration//GEN-END:variables
