@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-TransactionWebServices" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/TransactionWebServices"/>
+        <property name="wsdl-TransactionWebServices" location="xml-resources/web-service-references/TransactionWebServices/wsdl/localhost_8084/PayportExpressWeb/TransactionWebServices.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TransactionWebServices" destdir="${build.generated.dir}/jax-wsCache/TransactionWebServices" wsdl="${wsdl-TransactionWebServices}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8084/PayportExpressWeb/TransactionWebServices?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-TransactionWebServices}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/TransactionWebServices"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/TransactionWebServices">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-TransactionWebServices" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/TransactionWebServices"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/web_services"/>
+    </target>
+    <target name="wsimport-client-BranchWebServices" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/BranchWebServices"/>
+        <property name="wsdl-BranchWebServices" location="xml-resources/web-service-references/BranchWebServices/wsdl/localhost_8084/PayportExpressWeb/BranchWebServices.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/BranchWebServices" destdir="${build.generated.dir}/jax-wsCache/BranchWebServices" wsdl="${wsdl-BranchWebServices}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8084/PayportExpressWeb/BranchWebServices?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-BranchWebServices}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/BranchWebServices"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/BranchWebServices">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-BranchWebServices" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/BranchWebServices"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/web_services"/>
+    </target>
+    <target name="wsimport-client-EmployeeWebServices" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/EmployeeWebServices"/>
+        <property name="wsdl-EmployeeWebServices" location="xml-resources/web-service-references/EmployeeWebServices/wsdl/localhost_8084/PayportExpressWeb/EmployeeWebServices.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/EmployeeWebServices" destdir="${build.generated.dir}/jax-wsCache/EmployeeWebServices" wsdl="${wsdl-EmployeeWebServices}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8084/PayportExpressWeb/EmployeeWebServices?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-EmployeeWebServices}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/EmployeeWebServices"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/EmployeeWebServices">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-EmployeeWebServices" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/EmployeeWebServices"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/web_services"/>
+    </target>
+    <target name="wsimport-client-AdminWebServices" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AdminWebServices"/>
+        <property name="wsdl-AdminWebServices" location="xml-resources/web-service-references/AdminWebServices/wsdl/localhost_8084/PayportExpressWeb/AdminWebServices.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AdminWebServices" destdir="${build.generated.dir}/jax-wsCache/AdminWebServices" wsdl="${wsdl-AdminWebServices}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8084/PayportExpressWeb/AdminWebServices?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-AdminWebServices}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AdminWebServices"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AdminWebServices">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-AdminWebServices" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/AdminWebServices"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/web_services"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-TransactionWebServices, wsimport-client-BranchWebServices, wsimport-client-EmployeeWebServices, wsimport-client-AdminWebServices"/>
+</project>

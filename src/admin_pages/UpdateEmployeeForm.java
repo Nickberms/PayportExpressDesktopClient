@@ -5,6 +5,10 @@
  */
 package admin_pages;
 
+import extra_features.*;
+import javax.swing.JTextField;
+import javax.swing.text.PlainDocument;
+
 /**
  *
  * @author Kein
@@ -16,6 +20,19 @@ public class UpdateEmployeeForm extends javax.swing.JFrame {
      */
     public UpdateEmployeeForm() {
         initComponents();
+        JTextField[] lettersFields = {
+            txtFirstName,
+            txtLastName,
+            txtTown,
+            txtMunicipality,
+            txtProvince
+        };
+        LettersOnly lettersOnlyFilter = new LettersOnly();
+        for (JTextField textField : lettersFields) {
+            ((PlainDocument) textField.getDocument()).setDocumentFilter(lettersOnlyFilter);
+        }
+        PlainDocument phoneNumberFilter = (PlainDocument) txtPhoneNumber.getDocument();
+        phoneNumberFilter.setDocumentFilter(new NumbersOnly(15));
     }
 
     /**

@@ -5,8 +5,9 @@
  */
 package admin_pages;
 
-import com.toedter.calendar.JDateChooser;
-import com.toedter.calendar.JTextFieldDateEditor;
+import extra_features.*;
+import javax.swing.JTextField;
+import javax.swing.text.PlainDocument;
 
 /**
  *
@@ -19,6 +20,19 @@ public class AddEmployeeForm extends javax.swing.JFrame {
      */
     public AddEmployeeForm() {
         initComponents();
+        JTextField[] lettersFields = {
+            txtFirstName,
+            txtLastName,
+            txtTown,
+            txtMunicipality,
+            txtProvince
+        };
+        LettersOnly lettersOnlyFilter = new LettersOnly();
+        for (JTextField textField : lettersFields) {
+            ((PlainDocument) textField.getDocument()).setDocumentFilter(lettersOnlyFilter);
+        }
+        PlainDocument phoneNumberFilter = (PlainDocument) txtPhoneNumber.getDocument();
+        phoneNumberFilter.setDocumentFilter(new NumbersOnly(15));
     }
 
     /**

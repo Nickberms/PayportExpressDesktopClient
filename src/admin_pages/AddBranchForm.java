@@ -5,6 +5,10 @@
  */
 package admin_pages;
 
+import extra_features.*;
+import javax.swing.JTextField;
+import javax.swing.text.PlainDocument;
+
 /**
  *
  * @author Kein
@@ -16,6 +20,16 @@ public class AddBranchForm extends javax.swing.JFrame {
      */
     public AddBranchForm() {
         initComponents();
+        JTextField[] lettersFields = {
+            txtBranchName,
+            txtTown,
+            txtMunicipality,
+            txtProvince
+        };
+        LettersOnly lettersOnlyFilter = new LettersOnly();
+        for (JTextField textField : lettersFields) {
+            ((PlainDocument) textField.getDocument()).setDocumentFilter(lettersOnlyFilter);
+        }
     }
 
     /**

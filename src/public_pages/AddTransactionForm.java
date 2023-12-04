@@ -1,9 +1,52 @@
 package public_pages;
 
+import extra_features.*;
+import javax.swing.JTextField;
+import javax.swing.text.PlainDocument;
+import javax.swing.event.*;
+
 public class AddTransactionForm extends javax.swing.JFrame {
 
     public AddTransactionForm() {
         initComponents();
+        JTextField[] lettersFields = {
+            txtSenderFirstName,
+            txtSenderMiddleName,
+            txtSenderLastName,
+            txtReceiverFirstName,
+            txtReceiverMiddleName,
+            txtReceiverLastName
+        };
+        LettersOnly lettersOnlyFilter = new LettersOnly();
+        for (JTextField textField : lettersFields) {
+            ((PlainDocument) textField.getDocument()).setDocumentFilter(lettersOnlyFilter);
+        }
+        PlainDocument senderContactNumberFilter = (PlainDocument) txtSenderContactNumber.getDocument();
+        senderContactNumberFilter.setDocumentFilter(new NumbersOnly(15));
+        PlainDocument receiverContactNumberFilter = (PlainDocument) txtReceiverContactNumber.getDocument();
+        receiverContactNumberFilter.setDocumentFilter(new NumbersOnly(15));
+        PlainDocument amountFilter = (PlainDocument) txtAmount.getDocument();
+        amountFilter.setDocumentFilter(new NumbersOnly(6));
+        txtAmount.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                updateServiceFee();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                updateServiceFee();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+            }
+
+            private void updateServiceFee() {
+                String serviceFee = CalculateServiceFee.calculateServiceFee(txtAmount.getText());
+                txtServiceFee.setText(serviceFee);
+            }
+        });
     }
 
     @SuppressWarnings("unchecked")
@@ -371,7 +414,7 @@ public class AddTransactionForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void txtSenderFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenderFirstNameActionPerformed
-  
+
     }//GEN-LAST:event_txtSenderFirstNameActionPerformed
 
     private void txtSenderMiddleNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenderMiddleNameActionPerformed
