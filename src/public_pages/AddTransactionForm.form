@@ -152,13 +152,13 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="cbxSenderNameSuffix" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cbxSenderNameSuffix" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblSenderNameSuffix" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblSenderContactNumber" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtSenderContactNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSenderContactNumber" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="lblAmountMoney" min="-2" max="-2" attributes="0"/>
@@ -179,14 +179,8 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="txtSenderFirstName">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSenderFirstNameActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtSenderMiddleName">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSenderMiddleNameActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblSenderFirstName">
           <Properties>
@@ -212,12 +206,12 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtSenderLastName">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSenderLastNameActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="cbxSenderNameSuffix">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="9" style="0"/>
+            </Property>
             <Property name="maximumRowCount" type="int" value="11"/>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="11">
@@ -236,9 +230,6 @@
             </Property>
             <Property name="lightWeightPopupEnabled" type="boolean" value="false"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxSenderNameSuffixActionPerformed"/>
-          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -254,9 +245,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtSenderContactNumber">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSenderContactNumberActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblAmountMoney">
           <Properties>
@@ -272,9 +260,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtAmount">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAmountActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblServiceFee">
           <Properties>
@@ -285,9 +270,6 @@
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtServiceFeeActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -365,13 +347,13 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="cbxReceiverNameSuffix" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cbxReceiverNameSuffix" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblReceiverNameSuffix" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblReceiverContactNumber" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtReceiverContactNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtReceiverContactNumber" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnSubmit" min="-2" max="-2" attributes="0"/>
@@ -384,14 +366,8 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="txtReceiverFirstName">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtReceiverFirstNameActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtReceiverMiddleName">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtReceiverMiddleNameActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblReceiverFirstName">
           <Properties>
@@ -417,12 +393,12 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtReceiverLastName">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtReceiverLastNameActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="cbxReceiverNameSuffix">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="9" style="0"/>
+            </Property>
             <Property name="maximumRowCount" type="int" value="11"/>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="11">
@@ -441,9 +417,6 @@
             </Property>
             <Property name="lightWeightPopupEnabled" type="boolean" value="false"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxReceiverNameSuffixActionPerformed"/>
-          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -459,9 +432,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtReceiverContactNumber">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtReceiverContactNumberActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnSubmit">
           <Properties>

@@ -1,9 +1,10 @@
 package public_pages;
 
 import extra_features.*;
-import javax.swing.JTextField;
-import javax.swing.text.PlainDocument;
+import web_services.*;
+import javax.swing.*;
 import javax.swing.event.*;
+import javax.swing.text.*;
 
 public class AddTransactionForm extends javax.swing.JFrame {
 
@@ -99,18 +100,6 @@ public class AddTransactionForm extends javax.swing.JFrame {
 
         panLeftComponents.setBackground(java.awt.SystemColor.controlHighlight);
 
-        txtSenderFirstName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSenderFirstNameActionPerformed(evt);
-            }
-        });
-
-        txtSenderMiddleName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSenderMiddleNameActionPerformed(evt);
-            }
-        });
-
         lblSenderFirstName.setText("First Name:");
 
         lblSenderMiddleName.setText("Middle Name:");
@@ -120,50 +109,23 @@ public class AddTransactionForm extends javax.swing.JFrame {
 
         lblSenderLastName.setText("Last Name:");
 
-        txtSenderLastName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSenderLastNameActionPerformed(evt);
-            }
-        });
-
+        cbxSenderNameSuffix.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         cbxSenderNameSuffix.setMaximumRowCount(11);
         cbxSenderNameSuffix.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Sr.", "Jr.", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" }));
         cbxSenderNameSuffix.setLightWeightPopupEnabled(false);
-        cbxSenderNameSuffix.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxSenderNameSuffixActionPerformed(evt);
-            }
-        });
 
         lblSenderNameSuffix.setText("Name Suffix:");
 
         lblSenderContactNumber.setText("Contact Number:");
-
-        txtSenderContactNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSenderContactNumberActionPerformed(evt);
-            }
-        });
 
         lblAmountMoney.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblAmountMoney.setText("Amount Money");
 
         lblAmount.setText("Amount:");
 
-        txtAmount.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAmountActionPerformed(evt);
-            }
-        });
-
         lblServiceFee.setText("Service Fee:");
 
         txtServiceFee.setEditable(false);
-        txtServiceFee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtServiceFeeActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout panLeftComponentsLayout = new javax.swing.GroupLayout(panLeftComponents);
         panLeftComponents.setLayout(panLeftComponentsLayout);
@@ -242,19 +204,9 @@ public class AddTransactionForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18))
         );
 
+        panLeftComponentsLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {cbxSenderNameSuffix, txtSenderContactNumber});
+
         panRightComponents.setBackground(java.awt.SystemColor.controlHighlight);
-
-        txtReceiverFirstName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtReceiverFirstNameActionPerformed(evt);
-            }
-        });
-
-        txtReceiverMiddleName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtReceiverMiddleNameActionPerformed(evt);
-            }
-        });
 
         lblReceiverFirstName.setText("First Name:");
 
@@ -265,30 +217,14 @@ public class AddTransactionForm extends javax.swing.JFrame {
 
         lblReceiverLastName.setText("Last Name:");
 
-        txtReceiverLastName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtReceiverLastNameActionPerformed(evt);
-            }
-        });
-
+        cbxReceiverNameSuffix.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         cbxReceiverNameSuffix.setMaximumRowCount(11);
         cbxReceiverNameSuffix.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Sr.", "Jr.", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" }));
         cbxReceiverNameSuffix.setLightWeightPopupEnabled(false);
-        cbxReceiverNameSuffix.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxReceiverNameSuffixActionPerformed(evt);
-            }
-        });
 
         lblReceiverNameSuffix.setText("Name Suffix:");
 
         lblReceiverContactNumber.setText("Contact Number:");
-
-        txtReceiverContactNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtReceiverContactNumberActionPerformed(evt);
-            }
-        });
 
         btnSubmit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnSubmit.setText("Submit");
@@ -373,6 +309,8 @@ public class AddTransactionForm extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
         );
 
+        panRightComponentsLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {cbxReceiverNameSuffix, txtReceiverContactNumber});
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -409,57 +347,75 @@ public class AddTransactionForm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
 
+    private String buildFullName(String firstName, String middleName, String lastName, String nameSuffix) {
+        String fullName = firstName;
+        if (middleName != null && !middleName.isEmpty()) {
+            fullName += " " + middleName;
+        }
+        fullName += " " + lastName;
+        if (nameSuffix != null && !nameSuffix.isEmpty() && !nameSuffix.equals("None")) {
+            fullName += " " + nameSuffix;
+        }
+        return fullName;
+    }
+
+    private void clearInputFields() {
+        txtServiceFee.setText("");
+        txtSenderFirstName.setText("");
+        txtSenderMiddleName.setText("");
+        txtSenderLastName.setText("");
+        cbxSenderNameSuffix.setSelectedIndex(0);
+        txtSenderContactNumber.setText("");
+        txtReceiverFirstName.setText("");
+        txtReceiverMiddleName.setText("");
+        txtReceiverLastName.setText("");
+        cbxReceiverNameSuffix.setSelectedIndex(0);
+        txtReceiverContactNumber.setText("");
+        txtAmount.setText("");
+    }
+
+    @SuppressWarnings({"UseSpecificCatch", "CallToPrintStackTrace", "UnnecessaryReturnStatement"})
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        // TODO add your handling code here:
+        TransactionWebServices_Service transaction_service = new TransactionWebServices_Service();
+        TransactionWebServices transaction_port = transaction_service.getTransactionWebServicesPort();
+        try {
+            float serviceFee = Float.parseFloat(txtServiceFee.getText());
+            String senderFirstName = txtSenderFirstName.getText().trim();
+            senderFirstName = NameFormatter.formatName(senderFirstName);
+            String senderMiddleName = txtSenderMiddleName.getText().trim();
+            senderMiddleName = NameFormatter.formatName(senderMiddleName);
+            String senderLastName = txtSenderLastName.getText().trim();
+            senderLastName = NameFormatter.formatName(senderLastName);
+            String senderName = buildFullName(senderFirstName, senderMiddleName, senderLastName, (String) cbxSenderNameSuffix.getSelectedItem());
+            String senderContactNumber = txtSenderContactNumber.getText();
+            String receiverFirstName = txtReceiverFirstName.getText().trim();
+            receiverFirstName = NameFormatter.formatName(receiverFirstName);
+            String receiverMiddleName = txtReceiverMiddleName.getText().trim();
+            receiverMiddleName = NameFormatter.formatName(receiverMiddleName);
+            String receiverLastName = txtReceiverLastName.getText().trim();
+            receiverLastName = NameFormatter.formatName(receiverLastName);
+            String receiverName = buildFullName(receiverFirstName, receiverMiddleName, receiverLastName, (String) cbxReceiverNameSuffix.getSelectedItem());
+            String receiverContactNumber = txtReceiverContactNumber.getText();
+            String amountString = txtAmount.getText();
+            float amount = Float.parseFloat(txtAmount.getText());
+            try {
+                if (senderFirstName.isEmpty() || senderLastName.isEmpty() || receiverFirstName.isEmpty() || receiverLastName.isEmpty() || amountString.isEmpty() || amount <= 0) {
+                    return;
+                } else if (senderContactNumber.length() < 3 || receiverContactNumber.length() < 3) {
+                    JOptionPane.showMessageDialog(this, "Contact numbers should be at least 3 characters long.", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    transaction_port.insertNewTransaction(serviceFee, senderName, senderContactNumber, receiverName, receiverContactNumber, amount);
+                    JOptionPane.showMessageDialog(this, "Submission successful. You can come to any of our branches at any time to confirm and process your transaction.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    clearInputFields();
+                }
+            } catch (Exception error) {
+                error.printStackTrace();
+            }
+        } catch (Exception error) {
+            error.printStackTrace();
+        }
     }//GEN-LAST:event_btnSubmitActionPerformed
-
-    private void txtSenderFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenderFirstNameActionPerformed
-
-    }//GEN-LAST:event_txtSenderFirstNameActionPerformed
-
-    private void txtSenderMiddleNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenderMiddleNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSenderMiddleNameActionPerformed
-
-    private void txtSenderLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenderLastNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSenderLastNameActionPerformed
-
-    private void cbxSenderNameSuffixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSenderNameSuffixActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbxSenderNameSuffixActionPerformed
-
-    private void txtSenderContactNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenderContactNumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSenderContactNumberActionPerformed
-
-    private void txtAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAmountActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAmountActionPerformed
-
-    private void txtServiceFeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtServiceFeeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtServiceFeeActionPerformed
-
-    private void txtReceiverFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReceiverFirstNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtReceiverFirstNameActionPerformed
-
-    private void txtReceiverMiddleNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReceiverMiddleNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtReceiverMiddleNameActionPerformed
-
-    private void txtReceiverLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReceiverLastNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtReceiverLastNameActionPerformed
-
-    private void cbxReceiverNameSuffixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxReceiverNameSuffixActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbxReceiverNameSuffixActionPerformed
-
-    private void txtReceiverContactNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReceiverContactNumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtReceiverContactNumberActionPerformed
+    
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

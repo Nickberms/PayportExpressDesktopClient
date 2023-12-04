@@ -31,12 +31,12 @@ public class EmployeeLogin extends javax.swing.JFrame {
 
         lblEmployeeLogin = new javax.swing.JLabel();
         panEmployeeLoginForm = new javax.swing.JPanel();
-        btnLogIn = new javax.swing.JButton();
-        btnGoToAddTransactionForm = new javax.swing.JButton();
         lblEmailAddress = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
         txtEmailAddress = new javax.swing.JTextField();
-        txtPassword = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JPasswordField();
+        btnLogIn = new javax.swing.JButton();
+        btnGoToAddTransactionForm = new javax.swing.JButton();
         btnLogInAsAdmin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,9 +48,12 @@ public class EmployeeLogin extends javax.swing.JFrame {
 
         panEmployeeLoginForm.setBackground(java.awt.SystemColor.controlHighlight);
 
+        lblEmailAddress.setText("Email Address:");
+
+        lblPassword.setText("Password:");
+
         btnLogIn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnLogIn.setText("Log In");
-        btnLogIn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnLogIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogInActionPerformed(evt);
@@ -59,20 +62,14 @@ public class EmployeeLogin extends javax.swing.JFrame {
 
         btnGoToAddTransactionForm.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnGoToAddTransactionForm.setText("Go to Add Transaction Form");
-        btnGoToAddTransactionForm.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnGoToAddTransactionForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGoToAddTransactionFormActionPerformed(evt);
             }
         });
 
-        lblEmailAddress.setText("Email Address:");
-
-        lblPassword.setText("Password:");
-
         btnLogInAsAdmin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnLogInAsAdmin.setText("Log in as Admin");
-        btnLogInAsAdmin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnLogInAsAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogInAsAdminActionPerformed(evt);
@@ -85,23 +82,22 @@ public class EmployeeLogin extends javax.swing.JFrame {
             panEmployeeLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panEmployeeLoginFormLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addGroup(panEmployeeLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panEmployeeLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                        .addComponent(btnGoToAddTransactionForm)
-                        .addComponent(btnLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnLogInAsAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panEmployeeLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(panEmployeeLoginFormLayout.createSequentialGroup()
                         .addGroup(panEmployeeLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblEmailAddress)
                             .addComponent(lblPassword))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panEmployeeLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPassword)
-                            .addComponent(txtEmailAddress))))
+                            .addComponent(txtEmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnLogIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGoToAddTransactionForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLogInAsAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(26, 26, 26))
         );
 
-        panEmployeeLoginFormLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnGoToAddTransactionForm, btnLogIn, btnLogInAsAdmin});
+        panEmployeeLoginFormLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtEmailAddress, txtPassword});
 
         panEmployeeLoginFormLayout.setVerticalGroup(
             panEmployeeLoginFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,6 +118,8 @@ public class EmployeeLogin extends javax.swing.JFrame {
                 .addComponent(btnLogInAsAdmin)
                 .addGap(26, 26, 26))
         );
+
+        panEmployeeLoginFormLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtEmailAddress, txtPassword});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -212,6 +210,6 @@ public class EmployeeLogin extends javax.swing.JFrame {
     private javax.swing.JLabel lblPassword;
     private javax.swing.JPanel panEmployeeLoginForm;
     private javax.swing.JTextField txtEmailAddress;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
 }

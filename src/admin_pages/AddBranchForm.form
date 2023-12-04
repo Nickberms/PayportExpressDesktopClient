@@ -135,9 +135,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtBranchName">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBranchNameActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblBranchName">
           <Properties>
@@ -168,19 +165,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtTown">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTownActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtMunicipality">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMunicipalityActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtProvince">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtProvinceActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnSave">
           <Properties>

@@ -107,6 +107,7 @@ public class UpdateBranchForm extends javax.swing.JFrame {
 
         lblOperationStatus.setText("Operation Status:");
 
+        cbxOperationStatus.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         cbxOperationStatus.setMaximumRowCount(2);
         cbxOperationStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Inactive" }));
         cbxOperationStatus.setLightWeightPopupEnabled(false);
