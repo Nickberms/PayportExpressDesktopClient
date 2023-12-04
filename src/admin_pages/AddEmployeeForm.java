@@ -83,7 +83,7 @@ public class AddEmployeeForm extends javax.swing.JFrame {
         lblPayportExpressTransactionForm.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblPayportExpressTransactionForm.setText("Payport Express Transaction Form");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Add New Employee");
         setResizable(false);
 
@@ -382,9 +382,6 @@ public class AddEmployeeForm extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Please enter a valid email address.", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
                     employee_port.insertNewEmployee(branchStation, firstName, lastName, birthdate, sex, address, phoneNumber, emailAddress, password);
-                    ManageEmployeesView manageEmployeesView = new ManageEmployeesView();
-                    manageEmployeesView.setLocationRelativeTo(null);
-                    manageEmployeesView.setVisible(true);
                     this.dispose();
                 }
             } catch (Exception error) {
@@ -396,9 +393,6 @@ public class AddEmployeeForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        ManageEmployeesView manageEmployeesView = new ManageEmployeesView();
-        manageEmployeesView.setLocationRelativeTo(null);
-        manageEmployeesView.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
     

@@ -40,7 +40,7 @@ public class AddBranchForm extends javax.swing.JFrame {
         btnCancel = new javax.swing.JButton();
         lblAddNewPayportExpressBranch = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Add New Branch");
         setResizable(false);
 
@@ -179,9 +179,6 @@ public class AddBranchForm extends javax.swing.JFrame {
                     return;
                 } else {
                     branch_port.insertNewBranch(branchName, address);
-                    ManageBranchesView manageBranchesView = new ManageBranchesView();
-                    manageBranchesView.setLocationRelativeTo(null);
-                    manageBranchesView.setVisible(true);
                     this.dispose();
                 }
             } catch (Exception error) {
@@ -193,9 +190,6 @@ public class AddBranchForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        ManageBranchesView manageBranchesView = new ManageBranchesView();
-        manageBranchesView.setLocationRelativeTo(null);
-        manageBranchesView.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
 

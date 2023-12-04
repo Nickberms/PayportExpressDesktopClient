@@ -271,7 +271,6 @@ public class ManageBranchesView extends javax.swing.JFrame {
         UpdateBranchForm updateBranchForm = new UpdateBranchForm();
         updateBranchForm.setLocationRelativeTo(null);
         updateBranchForm.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_btnUpdateBranchActionPerformed
 
     private void btnDeleteBranchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteBranchActionPerformed
@@ -293,14 +292,13 @@ public class ManageBranchesView extends javax.swing.JFrame {
         AddBranchForm addBranchForm = new AddBranchForm();
         addBranchForm.setLocationRelativeTo(null);
         addBranchForm.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_btnAddBranchActionPerformed
 
     private void btnGoToEmployeesTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoToEmployeesTableActionPerformed
-        ManageEmployeesView manageEmployeesView = new ManageEmployeesView();
-        manageEmployeesView.setLocationRelativeTo(null);
-        manageEmployeesView.setVisible(true);
-        this.dispose();
+        //ManageEmployeesView manageEmployeesView = new ManageEmployeesView();
+        //manageEmployeesView.setLocationRelativeTo(null);
+        //manageEmployeesView.setVisible(true);
+        //this.dispose();
     }//GEN-LAST:event_btnGoToEmployeesTableActionPerformed
 
     /**

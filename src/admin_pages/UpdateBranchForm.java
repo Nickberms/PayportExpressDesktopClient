@@ -60,7 +60,7 @@ public class UpdateBranchForm extends javax.swing.JFrame {
         txtMunicipality = new javax.swing.JTextField();
         txtProvince = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Update Branch");
         setResizable(false);
 
@@ -251,9 +251,6 @@ public class UpdateBranchForm extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxOperationStatusActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        ManageBranchesView manageBranchesView = new ManageBranchesView();
-        manageBranchesView.setLocationRelativeTo(null);
-        manageBranchesView.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
 

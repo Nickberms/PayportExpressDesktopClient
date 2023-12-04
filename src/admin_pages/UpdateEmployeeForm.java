@@ -80,7 +80,7 @@ public class UpdateEmployeeForm extends javax.swing.JFrame {
         btnSave = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Update Employee");
         setResizable(false);
 
@@ -441,9 +441,6 @@ public class UpdateEmployeeForm extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxWorkingStatusActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        ManageEmployeesView manageEmployeesView = new ManageEmployeesView();
-        manageEmployeesView.setLocationRelativeTo(null);
-        manageEmployeesView.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
 
