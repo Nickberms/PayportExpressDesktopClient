@@ -1,12 +1,71 @@
 package admin_pages;
 
-import public_pages.*;
+import web_services.*;
+import java.util.*;
+import javax.swing.*;
+import javax.swing.table.*;
+import net.java.dev.jaxb.array.*;
 
 public class ManageEmployeesView extends javax.swing.JFrame {
 
+    BranchWebServices_Service branch_service = new BranchWebServices_Service();
+    BranchWebServices branch_port = branch_service.getBranchWebServicesPort();
+    EmployeeWebServices_Service employee_service = new EmployeeWebServices_Service();
+    EmployeeWebServices employee_port = employee_service.getEmployeeWebServicesPort();
     public static String adminId;
     public static String firstName;
     public static String lastName;
+
+    private void populateEmployeesTable() {
+        List<StringArray> employeeArray = employee_port.selectAllEmployees();
+        List<String[]> employees = new ArrayList<>();
+        for (StringArray employeeStringArray : employeeArray) {
+            employees.add(employeeStringArray.getItem().toArray(new String[0]));
+        }
+        HashMap<Integer, String> branchMap = new HashMap<>();
+        List<StringArray> branchArray = branch_port.selectAllBranches();
+        for (StringArray branchStringArray : branchArray) {
+            String[] branch = branchStringArray.getItem().toArray(new String[0]);
+            branchMap.put(Integer.parseInt(branch[0]), branch[2]);
+        }
+        String keyword = txtSearchEmployees.getText();
+        if (keyword != null) {
+            keyword = keyword.toLowerCase();
+        }
+        DefaultTableModel model = (DefaultTableModel) tblEmployeesView.getModel();
+        model.setRowCount(0);
+        for (String[] employee : employees) {
+            String branchName = branchMap.getOrDefault(Integer.parseInt(employee[1]), "No Branch");
+            boolean matchesKeyword = true;
+            if (keyword != null && !keyword.trim().isEmpty()) {
+                matchesKeyword = false;
+                for (String field : employee) {
+                    if (field != null && field.toLowerCase().contains(keyword)) {
+                        matchesKeyword = true;
+                        break;
+                    }
+                }
+                if (branchName.toLowerCase().contains(keyword)) {
+                    matchesKeyword = true;
+                }
+            }
+            if (matchesKeyword) {
+                Object[] row = new Object[]{
+                    employee[0],
+                    employee[1] + " " + branchName,
+                    employee[2],
+                    employee[3],
+                    employee[4],
+                    employee[5],
+                    employee[6],
+                    employee[7],
+                    employee[8],
+                    employee[9]
+                };
+                model.addRow(row);
+            }
+        }
+    }
 
     @SuppressWarnings("static-access")
     public ManageEmployeesView(String adminId, String firstName, String lastName) {
@@ -14,6 +73,9 @@ public class ManageEmployeesView extends javax.swing.JFrame {
         this.firstName = firstName;
         this.lastName = lastName;
         initComponents();
+        lblWelcome.setText("Welcome, " + firstName + " " + lastName);
+        lblAdminId.setText("Admin ID: " + adminId);
+        populateEmployeesTable();
     }
 
     @SuppressWarnings("unchecked")
@@ -39,6 +101,7 @@ public class ManageEmployeesView extends javax.swing.JFrame {
         setTitle("Manage Employees");
         setResizable(false);
 
+        tblEmployeesView.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         tblEmployeesView.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
@@ -91,7 +154,7 @@ public class ManageEmployeesView extends javax.swing.JFrame {
             tblEmployeesView.getColumnModel().getColumn(0).setResizable(false);
             tblEmployeesView.getColumnModel().getColumn(0).setPreferredWidth(25);
             tblEmployeesView.getColumnModel().getColumn(1).setResizable(false);
-            tblEmployeesView.getColumnModel().getColumn(1).setPreferredWidth(60);
+            tblEmployeesView.getColumnModel().getColumn(1).setPreferredWidth(70);
             tblEmployeesView.getColumnModel().getColumn(2).setResizable(false);
             tblEmployeesView.getColumnModel().getColumn(2).setPreferredWidth(60);
             tblEmployeesView.getColumnModel().getColumn(3).setResizable(false);
@@ -99,7 +162,7 @@ public class ManageEmployeesView extends javax.swing.JFrame {
             tblEmployeesView.getColumnModel().getColumn(4).setResizable(false);
             tblEmployeesView.getColumnModel().getColumn(4).setPreferredWidth(20);
             tblEmployeesView.getColumnModel().getColumn(5).setResizable(false);
-            tblEmployeesView.getColumnModel().getColumn(5).setPreferredWidth(30);
+            tblEmployeesView.getColumnModel().getColumn(5).setPreferredWidth(50);
             tblEmployeesView.getColumnModel().getColumn(6).setResizable(false);
             tblEmployeesView.getColumnModel().getColumn(6).setPreferredWidth(1);
             tblEmployeesView.getColumnModel().getColumn(7).setResizable(false);
@@ -107,7 +170,7 @@ public class ManageEmployeesView extends javax.swing.JFrame {
             tblEmployeesView.getColumnModel().getColumn(8).setResizable(false);
             tblEmployeesView.getColumnModel().getColumn(8).setPreferredWidth(50);
             tblEmployeesView.getColumnModel().getColumn(9).setResizable(false);
-            tblEmployeesView.getColumnModel().getColumn(9).setPreferredWidth(100);
+            tblEmployeesView.getColumnModel().getColumn(9).setPreferredWidth(70);
         }
 
         panAdminDetails.setBackground(java.awt.SystemColor.controlHighlight);
@@ -270,30 +333,50 @@ public class ManageEmployeesView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpdateEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateEmployeeActionPerformed
-        UpdateEmployeeForm updateEmployeeForm = new UpdateEmployeeForm();
-        updateEmployeeForm.setLocationRelativeTo(null);
-        updateEmployeeForm.setVisible(true);
+        int selectedRow = tblEmployeesView.getSelectedRow();
+        if (selectedRow != -1) {
+            String employeeId = (String) tblEmployeesView.getValueAt(selectedRow, 0);
+            UpdateEmployeeForm updateEmployeeForm = new UpdateEmployeeForm(adminId, firstName, lastName, employeeId);
+            updateEmployeeForm.setLocationRelativeTo(null);
+            updateEmployeeForm.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnUpdateEmployeeActionPerformed
 
     private void btnDeleteEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteEmployeeActionPerformed
-        // TODO add your handling code here:
+        int selectedRow = tblEmployeesView.getSelectedRow();
+        if (selectedRow != -1) {
+            String employeeIdParam = (String) tblEmployeesView.getValueAt(selectedRow, 0);
+            int employeeId = Integer.parseInt(employeeIdParam);
+            int confirm = JOptionPane.showConfirmDialog(
+                    this,
+                    "Delete employee? Make sure it does not hold any records anymore",
+                    "Confirmation",
+                    JOptionPane.YES_NO_OPTION
+            );
+            if (confirm == JOptionPane.YES_OPTION) {
+                employee_port.deleteEmployee(employeeId);
+                populateEmployeesTable();
+            }
+        }
     }//GEN-LAST:event_btnDeleteEmployeeActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
+        populateEmployeesTable();
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-        AdminLogin adminLogin = new AdminLogin();
+        public_pages.AdminLogin adminLogin = new public_pages.AdminLogin();
         adminLogin.setLocationRelativeTo(null);
         adminLogin.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnAddEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddEmployeeActionPerformed
-        AddEmployeeForm addEmployeeForm = new AddEmployeeForm();
+        AddEmployeeForm addEmployeeForm = new AddEmployeeForm(adminId, firstName, lastName);
         addEmployeeForm.setLocationRelativeTo(null);
         addEmployeeForm.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnAddEmployeeActionPerformed
 
     private void btnGoToBranchesTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoToBranchesTableActionPerformed

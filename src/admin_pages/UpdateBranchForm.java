@@ -60,7 +60,7 @@ public class UpdateBranchForm extends javax.swing.JFrame {
         txtMunicipality = new javax.swing.JTextField();
         txtProvince = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Update Branch");
         setResizable(false);
 

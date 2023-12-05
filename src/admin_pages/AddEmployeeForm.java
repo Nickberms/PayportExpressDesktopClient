@@ -17,6 +17,9 @@ public class AddEmployeeForm extends javax.swing.JFrame {
     BranchWebServices branch_port = branch_service.getBranchWebServicesPort();
     EmployeeWebServices_Service employee_service = new EmployeeWebServices_Service();
     EmployeeWebServices employee_port = employee_service.getEmployeeWebServicesPort();
+    public static String adminId;
+    public static String firstName;
+    public static String lastName;
 
     private void populateBranchStationComboBox() {
         List<StringArray> branchArray = branch_port.selectAllBranches();
@@ -27,7 +30,11 @@ public class AddEmployeeForm extends javax.swing.JFrame {
         }
     }
 
-    public AddEmployeeForm() {
+    @SuppressWarnings("static-access")
+    public AddEmployeeForm(String adminId, String firstName, String lastName) {
+        this.adminId = adminId;
+        this.firstName = firstName;
+        this.lastName = lastName;
         initComponents();
         populateBranchStationComboBox();
         JTextField[] lettersFields = {
@@ -86,7 +93,7 @@ public class AddEmployeeForm extends javax.swing.JFrame {
         lblPayportExpressTransactionForm.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblPayportExpressTransactionForm.setText("Payport Express Transaction Form");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Add New Employee");
         setResizable(false);
 
@@ -351,10 +358,10 @@ public class AddEmployeeForm extends javax.swing.JFrame {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         try {
             int branchStation = getSelectedBranchId();
-            String firstName = txtFirstName.getText().trim();
-            firstName = NameFormatter.formatName(firstName);
-            String lastName = txtLastName.getText().trim();
-            lastName = NameFormatter.formatName(lastName);
+            String employeeFirstName = txtFirstName.getText().trim();
+            employeeFirstName = NameFormatter.formatName(employeeFirstName);
+            String employeelastName = txtLastName.getText().trim();
+            employeelastName = NameFormatter.formatName(employeelastName);
             String birthdateString = getFormattedDateFromDateChooser(dteBirthdate);
             @SuppressWarnings("UnusedAssignment")
             Date gregorian = null;
@@ -375,14 +382,17 @@ public class AddEmployeeForm extends javax.swing.JFrame {
             String emailAddress = txtEmailAddress.getText().toLowerCase().trim();
             String password = txtPassword.getText();
             try {
-                if (firstName.isEmpty() || lastName.isEmpty() || birthdateString.isEmpty() || town.isEmpty() || municipality.isEmpty() || province.isEmpty() || password.isEmpty()) {
+                if (employeeFirstName.isEmpty() || employeelastName.isEmpty() || birthdateString.isEmpty() || town.isEmpty() || municipality.isEmpty() || province.isEmpty() || password.isEmpty()) {
                     return;
                 } else if (phoneNumber.length() < 3) {
-                    JOptionPane.showMessageDialog(this, "The phone number should be at least 3 characters long.", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "The phone number should be at least 3 characters long", "Error", JOptionPane.ERROR_MESSAGE);
                 } else if (!isValidEmail(emailAddress)) {
-                    JOptionPane.showMessageDialog(this, "Please enter a valid email address.", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Please enter a valid email address", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    employee_port.insertNewEmployee(branchStation, firstName, lastName, birthdate, sex, address, phoneNumber, emailAddress, password);
+                    employee_port.insertNewEmployee(branchStation, employeeFirstName, employeelastName, birthdate, sex, address, phoneNumber, emailAddress, password);
+                    ManageEmployeesView manageEmployeesView = new ManageEmployeesView(adminId, firstName, lastName);
+                    manageEmployeesView.setLocationRelativeTo(null);
+                    manageEmployeesView.setVisible(true);
                     this.dispose();
                 }
             } catch (Exception error) {
@@ -394,6 +404,9 @@ public class AddEmployeeForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        ManageEmployeesView manageEmployeesView = new ManageEmployeesView(adminId, firstName, lastName);
+        manageEmployeesView.setLocationRelativeTo(null);
+        manageEmployeesView.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
 
@@ -409,7 +422,7 @@ public class AddEmployeeForm extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(AddEmployeeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         java.awt.EventQueue.invokeLater(() -> {
-            new AddEmployeeForm().setVisible(true);
+            new AddEmployeeForm(adminId, firstName, lastName).setVisible(true);
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

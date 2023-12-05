@@ -103,9 +103,9 @@ public class ManageTransactionsView extends javax.swing.JFrame {
             branchMap.put(Integer.parseInt(branch[0]), branch[2]);
         }
         branchName = branchMap.getOrDefault(branchId, "");
+        lblWelcome.setText("Welcome, " + firstName + " " + lastName);
         lblEmployeeId.setText("Employee ID: " + employeeId);
         lblBranchStationed.setText("Branch Stationed: " + branchId + " " + branchName);
-        lblWelcome.setText("Welcome, " + firstName + " " + lastName);
         populateTransactionsTable();
     }
 

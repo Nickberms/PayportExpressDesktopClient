@@ -43,7 +43,7 @@ public class AddBranchForm extends javax.swing.JFrame {
         btnCancel = new javax.swing.JButton();
         lblAddNewPayportExpressBranch = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Add New Branch");
         setResizable(false);
 
