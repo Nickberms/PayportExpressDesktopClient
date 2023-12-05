@@ -13,9 +13,12 @@ import net.java.dev.jaxb.array.*;
 
 public class AddEmployeeForm extends javax.swing.JFrame {
 
+    BranchWebServices_Service branch_service = new BranchWebServices_Service();
+    BranchWebServices branch_port = branch_service.getBranchWebServicesPort();
+    EmployeeWebServices_Service employee_service = new EmployeeWebServices_Service();
+    EmployeeWebServices employee_port = employee_service.getEmployeeWebServicesPort();
+
     private void populateBranchStationComboBox() {
-        BranchWebServices_Service branch_service = new BranchWebServices_Service();
-        BranchWebServices branch_port = branch_service.getBranchWebServicesPort();
         List<StringArray> branchArray = branch_port.selectAllBranches();
         for (StringArray branchStringArray : branchArray) {
             String[] branch = branchStringArray.getItem().toArray(new String[0]);
@@ -317,7 +320,7 @@ public class AddEmployeeForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private int getSelectedBranchId() {
         String selectedBranch = (String) cbxBranchStation.getSelectedItem();
         if (selectedBranch != null && !selectedBranch.isEmpty()) {
@@ -346,8 +349,6 @@ public class AddEmployeeForm extends javax.swing.JFrame {
 
     @SuppressWarnings({"UseSpecificCatch", "CallToPrintStackTrace", "UnnecessaryReturnStatement"})
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        EmployeeWebServices_Service employee_service = new EmployeeWebServices_Service();
-        EmployeeWebServices employee_port = employee_service.getEmployeeWebServicesPort();
         try {
             int branchStation = getSelectedBranchId();
             String firstName = txtFirstName.getText().trim();
@@ -395,7 +396,7 @@ public class AddEmployeeForm extends javax.swing.JFrame {
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
-    
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

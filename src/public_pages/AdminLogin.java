@@ -7,6 +7,9 @@ import javax.swing.*;
 
 public class AdminLogin extends javax.swing.JFrame {
 
+    AdminWebServices_Service admin_service = new AdminWebServices_Service();
+    AdminWebServices admin_port = admin_service.getAdminWebServicesPort();
+
     public AdminLogin() {
         initComponents();
     }
@@ -133,8 +136,6 @@ public class AdminLogin extends javax.swing.JFrame {
 
     @SuppressWarnings({"CallToPrintStackTrace", "UseSpecificCatch"})
     private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
-        AdminWebServices_Service admin_service = new AdminWebServices_Service();
-        AdminWebServices admin_port = admin_service.getAdminWebServicesPort();
         try {
             String emailAddress = txtEmailAddress.getText();
             String password = txtPassword.getText();
@@ -148,10 +149,10 @@ public class AdminLogin extends javax.swing.JFrame {
                 manageEmployeesView.setVisible(true);
                 this.dispose();
             } else {
-                JOptionPane.showMessageDialog(this, "Invalid email address or password.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Invalid email address or password", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception error) {
-            JOptionPane.showMessageDialog(this, "Invalid email address or password.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Invalid email address or password", "Error", JOptionPane.ERROR_MESSAGE);
             error.printStackTrace();
         }
     }//GEN-LAST:event_btnLogInActionPerformed

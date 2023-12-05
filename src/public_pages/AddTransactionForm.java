@@ -402,10 +402,10 @@ public class AddTransactionForm extends javax.swing.JFrame {
                 if (senderFirstName.isEmpty() || senderLastName.isEmpty() || receiverFirstName.isEmpty() || receiverLastName.isEmpty() || amountString.isEmpty() || amount <= 0) {
                     return;
                 } else if (senderContactNumber.length() < 3 || receiverContactNumber.length() < 3) {
-                    JOptionPane.showMessageDialog(this, "Contact numbers should be at least 3 characters long.", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Contact numbers should be at least 3 characters long", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
                     transaction_port.insertNewTransaction(serviceFee, senderName, senderContactNumber, receiverName, receiverContactNumber, amount);
-                    JOptionPane.showMessageDialog(this, "Submission successful. You can come to any of our branches at any time to confirm and process your transaction.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Submission successful. You can come to any of our branches at any time to confirm and process your transaction", "Success", JOptionPane.INFORMATION_MESSAGE);
                     clearInputFields();
                 }
             } catch (Exception error) {

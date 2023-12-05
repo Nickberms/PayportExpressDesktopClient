@@ -7,6 +7,11 @@ import javax.swing.*;
 
 public class EmployeeLogin extends javax.swing.JFrame {
 
+    BranchWebServices_Service branch_service = new BranchWebServices_Service();
+    BranchWebServices branch_port = branch_service.getBranchWebServicesPort();
+    EmployeeWebServices_Service employee_service = new EmployeeWebServices_Service();
+    EmployeeWebServices employee_port = employee_service.getEmployeeWebServicesPort();
+
     public EmployeeLogin() {
         initComponents();
     }
@@ -133,10 +138,6 @@ public class EmployeeLogin extends javax.swing.JFrame {
 
     @SuppressWarnings({"CallToPrintStackTrace", "UseSpecificCatch"})
     private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
-        BranchWebServices_Service branch_service = new BranchWebServices_Service();
-        BranchWebServices branch_port = branch_service.getBranchWebServicesPort();
-        EmployeeWebServices_Service employee_service = new EmployeeWebServices_Service();
-        EmployeeWebServices employee_port = employee_service.getEmployeeWebServicesPort();
         try {
             String emailAddress = txtEmailAddress.getText();
             String password = txtPassword.getText();
@@ -153,11 +154,11 @@ public class EmployeeLogin extends javax.swing.JFrame {
                 @SuppressWarnings("null")
                 String operationStatus = branch.get(1);
                 if ("Fired".equals(workingStatus)) {
-                    JOptionPane.showMessageDialog(this, "Access is prohibited for former employees.", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Access is prohibited for former employees", "Error", JOptionPane.ERROR_MESSAGE);
                 } else if ("On Leave".equals(workingStatus)) {
-                    JOptionPane.showMessageDialog(this, "Access is prohibited for employees on leave.", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Access is prohibited for employees on leave", "Error", JOptionPane.ERROR_MESSAGE);
                 } else if ("Inactive".equals(operationStatus)) {
-                    JOptionPane.showMessageDialog(this, "Access is prohibited for employees at inactive branches.", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Access is prohibited for employees at inactive branches", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
                     String employeeId = employee.get(0);
                     String branchStationed = employee.get(1);
@@ -169,10 +170,10 @@ public class EmployeeLogin extends javax.swing.JFrame {
                     this.dispose();
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "Invalid email address or password.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Invalid email address or password", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception error) {
-            JOptionPane.showMessageDialog(this, "Invalid email address or password.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Invalid email address or password", "Error", JOptionPane.ERROR_MESSAGE);
             error.printStackTrace();
         }
     }//GEN-LAST:event_btnLogInActionPerformed

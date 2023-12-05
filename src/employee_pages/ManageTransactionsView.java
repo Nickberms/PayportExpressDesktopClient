@@ -1,14 +1,90 @@
 package employee_pages;
 
-import public_pages.*;
+import web_services.*;
+import java.util.*;
+import javax.swing.*;
+import javax.swing.table.*;
+import net.java.dev.jaxb.array.*;
 
 public class ManageTransactionsView extends javax.swing.JFrame {
 
+    BranchWebServices_Service branch_service = new BranchWebServices_Service();
+    BranchWebServices branch_port = branch_service.getBranchWebServicesPort();
+    EmployeeWebServices_Service employee_service = new EmployeeWebServices_Service();
+    EmployeeWebServices employee_port = employee_service.getEmployeeWebServicesPort();
+    TransactionWebServices_Service transaction_service = new TransactionWebServices_Service();
+    TransactionWebServices transaction_port = transaction_service.getTransactionWebServicesPort();
     public static String employeeId;
     public static String branchStationed;
     public static String firstName;
     public static String lastName;
-    
+
+    private void populateTransactionsTable() {
+        List<StringArray> transactionArray = transaction_port.selectAllTransactions();
+        List<String[]> transactions = new ArrayList<>();
+        for (StringArray transactionStringArray : transactionArray) {
+            transactions.add(transactionStringArray.getItem().toArray(new String[0]));
+        }
+        Map<String, String> employeeMap = new HashMap<>();
+        List<StringArray> employeeArray = employee_port.selectAllEmployees();
+        for (StringArray employeeStringArray : employeeArray) {
+            String[] employee = employeeStringArray.getItem().toArray(new String[0]);
+            employeeMap.put(employee[0], employee[3] + " " + employee[4]);
+        }
+        Map<String, String> branchMap = new HashMap<>();
+        List<StringArray> branchArray = branch_port.selectAllBranches();
+        for (StringArray branchStringArray : branchArray) {
+            String[] branch = branchStringArray.getItem().toArray(new String[0]);
+            branchMap.put(branch[0], branch[2]);
+        }
+        String keyword = txtSearchTransactions.getText();
+        if (keyword != null) {
+            keyword = keyword.toLowerCase();
+        }
+        DefaultTableModel model = (DefaultTableModel) tblTransactionsView.getModel();
+        model.setRowCount(0);
+        for (String[] transaction : transactions) {
+            boolean matchesKeyword = true;
+            if (keyword != null && !keyword.trim().isEmpty()) {
+                matchesKeyword = false;
+                for (int i = 0; i < transaction.length; i++) {
+                    String field = transaction[i];
+                    if (field != null && field.toLowerCase().contains(keyword)) {
+                        matchesKeyword = true;
+                        break;
+                    }
+                    if ((i == 7 || i == 8) && employeeMap.containsKey(field) && employeeMap.get(field).toLowerCase().contains(keyword)) {
+                        matchesKeyword = true;
+                        break;
+                    }
+                    if ((i == 9 || i == 10) && branchMap.containsKey(field) && branchMap.get(field).toLowerCase().contains(keyword)) {
+                        matchesKeyword = true;
+                        break;
+                    }
+                }
+            }
+            if (matchesKeyword) {
+                Object[] row = new Object[]{
+                    transaction[0],
+                    transaction[1],
+                    transaction[2],
+                    transaction[3],
+                    transaction[4],
+                    transaction[5],
+                    transaction[6],
+                    transaction[7],
+                    ("0".equals(transaction[8])) ? "" : transaction[8] + " " + employeeMap.getOrDefault(transaction[8], ""),
+                    ("0".equals(transaction[9])) ? "" : transaction[9] + " " + employeeMap.getOrDefault(transaction[9], ""),
+                    ("0".equals(transaction[10])) ? "" : transaction[10] + " " + branchMap.getOrDefault(transaction[10], ""),
+                    ("0".equals(transaction[11])) ? "" : transaction[11] + " " + branchMap.getOrDefault(transaction[11], ""),
+                    transaction[12],
+                    transaction[13]
+                };
+                model.addRow(row);
+            }
+        }
+    }
+
     @SuppressWarnings("static-access")
     public ManageTransactionsView(String employeeId, String branchStationed, String firstName, String lastName) {
         this.employeeId = employeeId;
@@ -16,6 +92,21 @@ public class ManageTransactionsView extends javax.swing.JFrame {
         this.firstName = firstName;
         this.lastName = lastName;
         initComponents();
+        int branchId = 0;
+        @SuppressWarnings("UnusedAssignment")
+        String branchName = "";
+        branchId = Integer.parseInt((String) branchStationed);
+        HashMap<Integer, String> branchMap = new HashMap<>();
+        List<StringArray> branchArray = branch_port.selectAllBranches();
+        for (StringArray branchStringArray : branchArray) {
+            String[] branch = branchStringArray.getItem().toArray(new String[0]);
+            branchMap.put(Integer.parseInt(branch[0]), branch[2]);
+        }
+        branchName = branchMap.getOrDefault(branchId, "");
+        lblEmployeeId.setText("Employee ID: " + employeeId);
+        lblBranchStationed.setText("Branch Stationed: " + branchId + " " + branchName);
+        lblWelcome.setText("Welcome, " + firstName + " " + lastName);
+        populateTransactionsTable();
     }
 
     @SuppressWarnings("unchecked")
@@ -42,6 +133,7 @@ public class ManageTransactionsView extends javax.swing.JFrame {
         setTitle("Manage Transactions");
         setResizable(false);
 
+        tblTransactionsView.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         tblTransactionsView.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -98,13 +190,13 @@ public class ManageTransactionsView extends javax.swing.JFrame {
             tblTransactionsView.getColumnModel().getColumn(2).setResizable(false);
             tblTransactionsView.getColumnModel().getColumn(2).setPreferredWidth(35);
             tblTransactionsView.getColumnModel().getColumn(3).setResizable(false);
-            tblTransactionsView.getColumnModel().getColumn(3).setPreferredWidth(5);
+            tblTransactionsView.getColumnModel().getColumn(3).setPreferredWidth(25);
             tblTransactionsView.getColumnModel().getColumn(4).setResizable(false);
             tblTransactionsView.getColumnModel().getColumn(4).setPreferredWidth(55);
             tblTransactionsView.getColumnModel().getColumn(5).setResizable(false);
-            tblTransactionsView.getColumnModel().getColumn(5).setPreferredWidth(15);
+            tblTransactionsView.getColumnModel().getColumn(5).setPreferredWidth(25);
             tblTransactionsView.getColumnModel().getColumn(6).setResizable(false);
-            tblTransactionsView.getColumnModel().getColumn(6).setPreferredWidth(60);
+            tblTransactionsView.getColumnModel().getColumn(6).setPreferredWidth(65);
             tblTransactionsView.getColumnModel().getColumn(7).setResizable(false);
             tblTransactionsView.getColumnModel().getColumn(7).setPreferredWidth(5);
             tblTransactionsView.getColumnModel().getColumn(8).setResizable(false);
@@ -112,11 +204,11 @@ public class ManageTransactionsView extends javax.swing.JFrame {
             tblTransactionsView.getColumnModel().getColumn(9).setResizable(false);
             tblTransactionsView.getColumnModel().getColumn(9).setPreferredWidth(70);
             tblTransactionsView.getColumnModel().getColumn(10).setResizable(false);
-            tblTransactionsView.getColumnModel().getColumn(10).setPreferredWidth(35);
+            tblTransactionsView.getColumnModel().getColumn(10).setPreferredWidth(65);
             tblTransactionsView.getColumnModel().getColumn(11).setResizable(false);
             tblTransactionsView.getColumnModel().getColumn(11).setPreferredWidth(65);
             tblTransactionsView.getColumnModel().getColumn(12).setResizable(false);
-            tblTransactionsView.getColumnModel().getColumn(12).setPreferredWidth(25);
+            tblTransactionsView.getColumnModel().getColumn(12).setPreferredWidth(50);
             tblTransactionsView.getColumnModel().getColumn(13).setResizable(false);
             tblTransactionsView.getColumnModel().getColumn(13).setPreferredWidth(55);
         }
@@ -283,27 +375,110 @@ public class ManageTransactionsView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSendAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendAmountActionPerformed
-        // TODO add your handling code here:
+        int selectedRow = tblTransactionsView.getSelectedRow();
+        if (selectedRow != -1) {
+            String controlNumberParam = (String) tblTransactionsView.getValueAt(selectedRow, 0);
+            int controlNumber = Integer.parseInt(controlNumberParam);
+            int confirm = JOptionPane.showConfirmDialog(
+                    this,
+                    "Send amount? Make sure it is already been paid",
+                    "Confirmation",
+                    JOptionPane.YES_NO_OPTION
+            );
+            if (confirm == JOptionPane.YES_OPTION) {
+                List<String> transaction = transaction_port.selectTransaction(controlNumber);
+                String feeStatus = transaction.get(1);
+                int branchSent = Integer.parseInt(transaction.get(10));
+                int branchWithdrawn = Integer.parseInt(transaction.get(11));
+                if ("Unpaid".equals(feeStatus) || branchSent != 0 || branchWithdrawn != 0) {
+                    populateTransactionsTable();
+                } else {
+                    transaction_port.sendAmount(controlNumber, Integer.parseInt(employeeId), Integer.parseInt(branchStationed));
+                    populateTransactionsTable();
+                }
+            }
+        }
     }//GEN-LAST:event_btnSendAmountActionPerformed
 
     private void btnPayServiceFeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPayServiceFeeActionPerformed
-        // TODO add your handling code here:
+        int selectedRow = tblTransactionsView.getSelectedRow();
+        if (selectedRow != -1) {
+            String controlNumberParam = (String) tblTransactionsView.getValueAt(selectedRow, 0);
+            int controlNumber = Integer.parseInt(controlNumberParam);
+            int confirm = JOptionPane.showConfirmDialog(
+                    this,
+                    "Pay service fee? This action cannot be undone",
+                    "Confirmation",
+                    JOptionPane.YES_NO_OPTION
+            );
+            if (confirm == JOptionPane.YES_OPTION) {
+                List<String> transaction = transaction_port.selectTransaction(controlNumber);
+                String feeStatus = transaction.get(1);
+                if ("Paid".equals(feeStatus)) {
+                    populateTransactionsTable();
+                } else {
+                    transaction_port.payServiceFee(controlNumber);
+                    populateTransactionsTable();
+                }
+            }
+        }
     }//GEN-LAST:event_btnPayServiceFeeActionPerformed
 
     private void btnWithdrawAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWithdrawAmountActionPerformed
-        // TODO add your handling code here:
+        int selectedRow = tblTransactionsView.getSelectedRow();
+        if (selectedRow != -1) {
+            String controlNumberParam = (String) tblTransactionsView.getValueAt(selectedRow, 0);
+            int controlNumber = Integer.parseInt(controlNumberParam);
+            int confirm = JOptionPane.showConfirmDialog(
+                    this,
+                    "Withdraw amount? Make sure it is already been sent",
+                    "Confirmation",
+                    JOptionPane.YES_NO_OPTION
+            );
+            if (confirm == JOptionPane.YES_OPTION) {
+                List<String> transaction = transaction_port.selectTransaction(controlNumber);
+                int branchSent = Integer.parseInt(transaction.get(10));
+                int branchWithdrawn = Integer.parseInt(transaction.get(11));
+                if (branchSent != 0 && branchWithdrawn == 0) {
+                    transaction_port.withdrawAmount(controlNumber, Integer.parseInt(employeeId), Integer.parseInt(branchStationed));
+                    populateTransactionsTable();
+                } else {
+                    populateTransactionsTable();
+                }
+            }
+        }
     }//GEN-LAST:event_btnWithdrawAmountActionPerformed
 
     private void btnDeleteTransactionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteTransactionActionPerformed
-        // TODO add your handling code here:
+        int selectedRow = tblTransactionsView.getSelectedRow();
+        if (selectedRow != -1) {
+            String controlNumberParam = (String) tblTransactionsView.getValueAt(selectedRow, 0);
+            int controlNumber = Integer.parseInt(controlNumberParam);
+            int confirm = JOptionPane.showConfirmDialog(
+                    this,
+                    "Delete transaction? Make sure it is still unpaid",
+                    "Confirmation",
+                    JOptionPane.YES_NO_OPTION
+            );
+            if (confirm == JOptionPane.YES_OPTION) {
+                List<String> transaction = transaction_port.selectTransaction(controlNumber);
+                String feeStatus = transaction.get(1);
+                if ("Paid".equals(feeStatus)) {
+                    populateTransactionsTable();
+                } else {
+                    transaction_port.deleteTransaction(controlNumber);
+                    populateTransactionsTable();
+                }
+            }
+        }
     }//GEN-LAST:event_btnDeleteTransactionActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
+        populateTransactionsTable();
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-        EmployeeLogin employeeLogin = new EmployeeLogin();
+        public_pages.EmployeeLogin employeeLogin = new public_pages.EmployeeLogin();
         employeeLogin.setLocationRelativeTo(null);
         employeeLogin.setVisible(true);
         this.dispose();

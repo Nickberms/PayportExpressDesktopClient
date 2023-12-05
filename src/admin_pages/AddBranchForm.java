@@ -2,10 +2,13 @@ package admin_pages;
 
 import extra_features.*;
 import web_services.*;
-import javax.swing.JTextField;
-import javax.swing.text.PlainDocument;
+import javax.swing.*;
+import javax.swing.text.*;
 
 public class AddBranchForm extends javax.swing.JFrame {
+
+    BranchWebServices_Service branch_service = new BranchWebServices_Service();
+    BranchWebServices branch_port = branch_service.getBranchWebServicesPort();
 
     public AddBranchForm() {
         initComponents();
@@ -162,8 +165,6 @@ public class AddBranchForm extends javax.swing.JFrame {
 
     @SuppressWarnings({"UnnecessaryReturnStatement", "CallToPrintStackTrace"})
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        BranchWebServices_Service branch_service = new BranchWebServices_Service();
-        BranchWebServices branch_port = branch_service.getBranchWebServicesPort();
         try {
             String branchName = txtBranchName.getText().trim();
             branchName = NameFormatter.formatName(branchName);
