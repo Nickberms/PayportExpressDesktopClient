@@ -159,9 +159,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtBranchName">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBranchNameActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblBranchName">
           <Properties>
@@ -232,9 +229,6 @@
             </Property>
             <Property name="lightWeightPopupEnabled" type="boolean" value="false"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxOperationStatusActionPerformed"/>
-          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -248,24 +242,12 @@
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBranchIdActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtTown">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTownActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtMunicipality">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMunicipalityActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtProvince">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtProvinceActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>

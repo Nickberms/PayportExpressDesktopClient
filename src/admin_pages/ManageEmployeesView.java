@@ -380,7 +380,7 @@ public class ManageEmployeesView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddEmployeeActionPerformed
 
     private void btnGoToBranchesTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoToBranchesTableActionPerformed
-        ManageBranchesView manageBranchesView = new ManageBranchesView();
+        ManageBranchesView manageBranchesView = new ManageBranchesView(adminId, firstName, lastName);
         manageBranchesView.setLocationRelativeTo(null);
         manageBranchesView.setVisible(true);
         this.dispose();

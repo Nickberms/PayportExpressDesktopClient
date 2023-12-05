@@ -9,8 +9,15 @@ public class AddBranchForm extends javax.swing.JFrame {
 
     BranchWebServices_Service branch_service = new BranchWebServices_Service();
     BranchWebServices branch_port = branch_service.getBranchWebServicesPort();
+    public static String adminId;
+    public static String firstName;
+    public static String lastName;
 
-    public AddBranchForm() {
+    @SuppressWarnings("static-access")
+    public AddBranchForm(String adminId, String firstName, String lastName) {
+        this.adminId = adminId;
+        this.firstName = firstName;
+        this.lastName = lastName;
         initComponents();
         JTextField[] lettersFields = {
             txtBranchName,
@@ -180,6 +187,9 @@ public class AddBranchForm extends javax.swing.JFrame {
                     return;
                 } else {
                     branch_port.insertNewBranch(branchName, address);
+                    ManageBranchesView manageBranchesView = new ManageBranchesView(adminId, firstName, lastName);
+                    manageBranchesView.setLocationRelativeTo(null);
+                    manageBranchesView.setVisible(true);
                     this.dispose();
                 }
             } catch (Exception error) {
@@ -191,6 +201,9 @@ public class AddBranchForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        ManageBranchesView manageBranchesView = new ManageBranchesView(adminId, firstName, lastName);
+        manageBranchesView.setLocationRelativeTo(null);
+        manageBranchesView.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
 
@@ -206,7 +219,7 @@ public class AddBranchForm extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(AddBranchForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         java.awt.EventQueue.invokeLater(() -> {
-            new AddBranchForm().setVisible(true);
+            new AddBranchForm(adminId, firstName, lastName).setVisible(true);
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
