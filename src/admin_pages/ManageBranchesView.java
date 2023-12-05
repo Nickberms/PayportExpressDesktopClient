@@ -83,6 +83,7 @@ public class ManageBranchesView extends javax.swing.JFrame {
         setTitle("Manage Branches");
         setResizable(false);
 
+        tblBranchesView.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         tblBranchesView.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

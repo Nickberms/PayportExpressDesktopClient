@@ -8,6 +8,9 @@ import javax.swing.text.*;
 
 public class AddTransactionForm extends javax.swing.JFrame {
 
+    TransactionWebServices_Service transaction_service = new TransactionWebServices_Service();
+    TransactionWebServices transaction_port = transaction_service.getTransactionWebServicesPort();
+
     public AddTransactionForm() {
         initComponents();
         JTextField[] lettersFields = {
@@ -376,8 +379,6 @@ public class AddTransactionForm extends javax.swing.JFrame {
 
     @SuppressWarnings({"UseSpecificCatch", "CallToPrintStackTrace", "UnnecessaryReturnStatement"})
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        TransactionWebServices_Service transaction_service = new TransactionWebServices_Service();
-        TransactionWebServices transaction_port = transaction_service.getTransactionWebServicesPort();
         try {
             float serviceFee = Float.parseFloat(txtServiceFee.getText());
             String senderFirstName = txtSenderFirstName.getText().trim();
@@ -415,7 +416,7 @@ public class AddTransactionForm extends javax.swing.JFrame {
             error.printStackTrace();
         }
     }//GEN-LAST:event_btnSubmitActionPerformed
-    
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

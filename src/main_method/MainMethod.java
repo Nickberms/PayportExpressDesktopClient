@@ -1,7 +1,7 @@
 package main_method;
 
-import public_pages.Index;
-import javax.swing.JFrame;
+import public_pages.*;
+import javax.swing.*;
 
 public class MainMethod {
 

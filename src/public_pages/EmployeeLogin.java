@@ -207,7 +207,6 @@ public class EmployeeLogin extends javax.swing.JFrame {
             new EmployeeLogin().setVisible(true);
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGoToAddTransactionForm;
     private javax.swing.JButton btnLogIn;
