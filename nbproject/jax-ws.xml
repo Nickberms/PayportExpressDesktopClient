@@ -3,7 +3,7 @@
     <services/>
     <clients>
         <client name="TransactionWebServices">
-            <wsdl-url>http://136.172.221.111:8084/PayportExpressWeb/TransactionWebServices?wsdl</wsdl-url>
+            <wsdl-url>http://136.172.221.198:8084/PayportExpressWeb/TransactionWebServices?wsdl</wsdl-url>
             <package-name>web_services</package-name>
             <catalog-file>catalog.xml</catalog-file>
             <wsimport-options>
@@ -21,7 +21,7 @@
                 </wsimport-option>
                 <wsimport-option>
                     <wsimport-option-name>wsdlLocation</wsimport-option-name>
-                    <wsimport-option-value>http://136.172.221.111:8084/PayportExpressWeb/TransactionWebServices?wsdl</wsimport-option-value>
+                    <wsimport-option-value>http://136.172.221.198:8084/PayportExpressWeb/TransactionWebServices?wsdl</wsimport-option-value>
                 </wsimport-option>
                 <wsimport-option>
                     <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -34,7 +34,7 @@
             </wsimport-options>
         </client>
         <client name="BranchWebServices">
-            <wsdl-url>http://136.172.221.111:8084/PayportExpressWeb/BranchWebServices?wsdl</wsdl-url>
+            <wsdl-url>http://136.172.221.198:8084/PayportExpressWeb/BranchWebServices?wsdl</wsdl-url>
             <package-name>web_services</package-name>
             <catalog-file>catalog.xml</catalog-file>
             <wsimport-options>
@@ -52,7 +52,7 @@
                 </wsimport-option>
                 <wsimport-option>
                     <wsimport-option-name>wsdlLocation</wsimport-option-name>
-                    <wsimport-option-value>http://136.172.221.111:8084/PayportExpressWeb/BranchWebServices?wsdl</wsimport-option-value>
+                    <wsimport-option-value>http://136.172.221.198:8084/PayportExpressWeb/BranchWebServices?wsdl</wsimport-option-value>
                 </wsimport-option>
                 <wsimport-option>
                     <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -65,7 +65,7 @@
             </wsimport-options>
         </client>
         <client name="EmployeeWebServices">
-            <wsdl-url>http://136.172.221.111:8084/PayportExpressWeb/EmployeeWebServices?wsdl</wsdl-url>
+            <wsdl-url>http://136.172.221.198:8084/PayportExpressWeb/EmployeeWebServices?wsdl</wsdl-url>
             <package-name>web_services</package-name>
             <catalog-file>catalog.xml</catalog-file>
             <wsimport-options>
@@ -83,7 +83,7 @@
                 </wsimport-option>
                 <wsimport-option>
                     <wsimport-option-name>wsdlLocation</wsimport-option-name>
-                    <wsimport-option-value>http://136.172.221.111:8084/PayportExpressWeb/EmployeeWebServices?wsdl</wsimport-option-value>
+                    <wsimport-option-value>http://136.172.221.198:8084/PayportExpressWeb/EmployeeWebServices?wsdl</wsimport-option-value>
                 </wsimport-option>
                 <wsimport-option>
                     <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -96,7 +96,7 @@
             </wsimport-options>
         </client>
         <client name="AdminWebServices">
-            <wsdl-url>http://136.172.221.111:8084/PayportExpressWeb/AdminWebServices?wsdl</wsdl-url>
+            <wsdl-url>http://136.172.221.198:8084/PayportExpressWeb/AdminWebServices?wsdl</wsdl-url>
             <package-name>web_services</package-name>
             <catalog-file>catalog.xml</catalog-file>
             <wsimport-options>
@@ -114,7 +114,7 @@
                 </wsimport-option>
                 <wsimport-option>
                     <wsimport-option-name>wsdlLocation</wsimport-option-name>
-                    <wsimport-option-value>http://136.172.221.111:8084/PayportExpressWeb/AdminWebServices?wsdl</wsimport-option-value>
+                    <wsimport-option-value>http://136.172.221.198:8084/PayportExpressWeb/AdminWebServices?wsdl</wsimport-option-value>
                 </wsimport-option>
                 <wsimport-option>
                     <wsimport-option-name>xnocompile</wsimport-option-name>
